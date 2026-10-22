@@ -1,0 +1,28 @@
+/* Tactile editorial details in the quieter parts of the council. */
+.object-edition .words{position:relative;isolation:isolate;background:#f0ece3}
+.object-edition .words:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:1;mix-blend-mode:normal;background:linear-gradient(90deg,transparent 5.5%,#8d4b5b10 5.55%,transparent 5.65%)}
+.working-notes{max-width:540px;width:calc(100% + 20px);margin:25px 0 0 -20px;color:#715d4f}
+.working-notes svg{display:block;width:100%;height:auto}.working-notes figcaption{font:9px/1.7 'Courier New',monospace;margin:5px 0 0 25px;color:#715d4f}
+.draft-note{transform-box:fill-box;transform-origin:center;will-change:transform}
+.note-one{transform:translateY(calc((var(--art-progress,.5) - .5)*-34px)) rotate(calc((var(--art-progress,.5) - .5)*-9deg))}
+.note-two{transform:translateY(calc((var(--art-progress,.5) - .5)*22px)) rotate(calc((var(--art-progress,.5) - .5)*4deg))}
+.note-three{transform:translateY(calc((var(--art-progress,.5) - .5)*-22px)) rotate(calc((var(--art-progress,.5) - .5)*10deg))}
+.iteration-trail{stroke-dashoffset:calc(var(--art-progress,.5)*-95px)}
+.object-edition .partners{position:relative;isolation:isolate;background:#eee8dc;overflow:hidden}
+.object-edition .partners .partner-layout{align-items:center;gap:8%}.partner-heading{min-width:0;position:relative}.partner-heading h2{position:relative;z-index:2}
+.partner-study{height:300px;position:relative;margin:16px -3vw -55px -6vw;pointer-events:none;mask-image:linear-gradient(0deg,transparent,#000 12%,#000 70%,transparent),linear-gradient(90deg,#000 65%,transparent 99%);mask-composite:intersect;transform:translateY(calc((var(--art-progress,.5) - .5)*-30px))}
+.partner-study>img{width:100%;height:100%;object-fit:cover;object-position:left 58%;display:block;mix-blend-mode:multiply}
+.partner-layout>.partner-heading>p{max-width:none}.partners .section-label{position:relative;z-index:2}.partners .partner-layout>div:last-child{align-self:center;padding-bottom:65px}
+.object-edition .join-section{isolation:isolate;background:#571020}
+.join-section .join-seal{position:absolute;width:clamp(320px,42vw,720px);height:auto;aspect-ratio:1;right:-5%;top:9%;opacity:.15;pointer-events:none;z-index:0;transform:translateY(calc((var(--art-progress,.5) - .5)*-60px)) rotate(calc(-13deg + var(--art-progress,.5)*12deg));filter:grayscale(1) sepia(.2);mix-blend-mode:screen;border-radius:50%;overflow:hidden}
+.join-section .join-seal svg{width:100%;height:100%;display:block}
+.join-print-lines{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(113deg,transparent 43%,#e5c3b71a 43.08%,transparent 43.2%),linear-gradient(14deg,transparent 68%,#e5c3b710 68.08%,transparent 68.2%),repeating-linear-gradient(90deg,transparent 0,transparent calc(16.66% - 1px),#eed9ca08 calc(16.66% - 1px),#eed9ca08 16.66%)}
+.join-eyebrow{position:relative;z-index:1}.join-section .join-bottom{z-index:2}.events{background-image:linear-gradient(90deg,transparent 49.95%,#8a6b5410 50%,transparent 50.05%)}
+@media(max-width:760px){.working-notes{width:calc(100% + 16px);margin-left:-10px;margin-top:15px}.working-notes figcaption{font-size:8px;margin-left:15px}.partners .partner-layout{display:block}.partners .partner-heading h2{margin-bottom:0}.partner-study{height:245px;margin:6px -6vw 12px;max-width:540px}.partners .partner-layout>div:last-child{padding-bottom:0;max-width:480px}.join-section .join-seal{width:88vw;right:-23%;top:22%;opacity:.14}.join-print-lines{background:linear-gradient(113deg,transparent 54%,#e5c3b71a 54.08%,transparent 54.2%),repeating-linear-gradient(90deg,transparent 0,transparent calc(33.33% - 1px),#eed9ca08 calc(33.33% - 1px),#eed9ca08 33.33%)}}
+@media(prefers-reduced-motion:reduce){.draft-note,.partner-study,.join-section .join-seal{transform:none;will-change:auto}.iteration-trail{stroke-dashoffset:0}}
+
+.words:after,.partners:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('assets/paper-grain.svg') repeat;background-size:210px;opacity:.045}
+.object-edition .join-section:before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:url('assets/paper-grain.svg') repeat;background-size:170px;opacity:.06;mix-blend-mode:soft-light}
+.object-edition .partners .partner-heading h2{font-size:clamp(60px,8vw,124px)}
+.object-edition .events{background-image:linear-gradient(90deg,transparent 49.95%,#8a6b5410 50%,transparent 50.05%)}
+@media(max-width:760px){.object-edition .partners .partner-heading h2{font-size:clamp(64px,16vw,90px)}}

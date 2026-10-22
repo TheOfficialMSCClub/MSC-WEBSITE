@@ -1,0 +1,10 @@
+import {readFileSync} from 'node:fs';
+import {accessIssuer} from '../auth.mjs';
+const config=JSON.parse(readFileSync(new URL('../wrangler.json',import.meta.url),'utf8')),v=config.vars;
+const url=new URL(v.MSC_PUBLIC_ORIGIN);
+if(url.protocol!=='https:'||url.origin!==v.MSC_PUBLIC_ORIGIN||url.username||url.password||/chatgpt\./.test(url.hostname))throw Error('Set the independent HTTPS origin, with no trailing slash.');
+if(!accessIssuer(v)||!v.MSC_ACCESS_AUD||!v.MSC_ADMIN_EMAILS?.trim())throw Error('Complete the club Access team domain, application AUD and email list.');
+if(!/^[a-f0-9-]{36}$/i.test(config.d1_databases[0].database_id)||config.d1_databases[0].database_id==='00000000-0000-0000-0000-000000000000')throw Error('Set the club-owned D1 database ID.');
+if('RESEND_API_KEY'in v||'MSC_RATE_SALT'in v)throw Error('Store actual keys and salts with wrangler secret put, not in config.');
+if(v.MSC_EMAIL_ENABLED==='true'&&!v.MSC_EMAIL_FROM)throw Error('Set a verified sender before enabling email.');
+console.log('Deployment settings pass local checks. Account permissions, Access policies and production secrets must also be configured.');

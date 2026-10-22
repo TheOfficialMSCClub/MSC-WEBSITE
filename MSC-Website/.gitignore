@@ -1,0 +1,8 @@
+node_modules/
+standalone/.assets/
+standalone/.worker-build/
+standalone/.wrangler/
+standalone/.dev.vars*
+.env*
+backups/
+.DS_Store

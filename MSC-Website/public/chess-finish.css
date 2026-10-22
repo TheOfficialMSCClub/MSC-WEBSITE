@@ -1,0 +1,20 @@
+/* A charcoal gallery with a warm burgundy atmosphere keeps the carved set in focus. */
+.object-edition .chess-experience{background:radial-gradient(ellipse at 82% 27%,#59344380 0%,transparent 55%),radial-gradient(ellipse at 70% 75%,#44232c66 0%,transparent 62%),linear-gradient(120deg,#171418,#292126 65%,#1c171b);color:#f1e9d9}
+.object-edition .chess-topline{color:#c2b9a7;border-color:#b9ac8e55}.object-edition .chess-topline>span:last-child{color:#bcaeb6}
+.object-edition .chess-copy>.thinking-eyebrow{color:#d5b599}.object-edition .chess-copy h2{color:#f4ead7}.object-edition .chess-copy h2 em{color:#d4b393}
+.object-edition .chess-copy>p:not(.thinking-eyebrow):not(.chess-status),.object-edition .chess-instruction>p{color:#c9bfc3}
+.object-edition .chess-instruction{border-color:#acb9b54d}.object-edition #chess-step-label{color:#d5b599}
+.object-edition .chess-controls>button{color:#c4c9c6}.object-edition .chess-controls>button:first-child{color:#f0d9b8;border-color:#c3a88488}.object-edition .chess-controls>button:hover{color:#fff0d4;border-color:#f0d9b8}
+.object-edition .chess-visual-caption{color:#bdacb3}.object-edition .chess-piece-label{background:#2b1b24ed;color:#f4dfbc;border-color:#b4976e66}
+.object-edition .chess-roster{position:relative;color:#40322d;background:#e8e1d4;margin:48px -5vw -80px;padding:28px 5vw 45px;border-top:1px solid #c2b8a3;box-sizing:content-box}
+.object-edition .chess-profile-dialog{background:#251d22;color:#f3e7d3;border-color:#6d535f}
+.object-edition .chess-profile-stage{background:radial-gradient(ellipse at 75% 45%,#6a3b4e66,transparent 65%),linear-gradient(110deg,#171219b0,transparent 53%)}
+.object-edition .chess-profile-topline{color:#c9b99d;border-color:#b6c7c24d}.object-edition .chess-profile-topline button{color:#f0d8b6}
+.object-edition .chess-profile-dialog .chess-profile-details>p:first-child{color:#d3b590}.object-edition .chess-profile-dialog .chess-profile h3{color:#f6eddd}.object-edition .chess-profile-dialog #chess-profile-role{color:#c9bdc4}
+.object-edition .chess-profile-dialog #chess-full-profile{color:#f1d9b4;border-color:#b5a58c88}.object-edition .chess-profile-dialog .chess-profile-browse{color:#e1c4a2}.object-edition .chess-profile-dialog .chess-profile-browse>button{border-color:#b8a17f66}.object-edition .chess-profile-dialog .chess-profile-browse>button:hover{background:#e6d4b7;color:#2b1d24}
+.object-edition .chess-profile-dialog .chess-profile-portrait{box-shadow:0 18px 45px #080f145c}
+.object-edition .chess-controls>button:focus-visible,.object-edition .chess-profile-dialog button:focus-visible,.object-edition .chess-mount:focus-visible{outline-color:#efcf99}
+@media(max-width:760px){.object-edition .chess-roster{margin:30px -6vw -60px;padding:25px 6vw 40px;width:auto;box-sizing:content-box}}
+
+.object-edition .chess-visual:before{content:"";position:absolute;inset:12% -7% 2%;background:radial-gradient(ellipse at 53% 72%,#ba7a8f12,transparent 63%);pointer-events:none}
+.object-edition .chess-profile-stage:after{content:"";position:absolute;inset:0;background:url("assets/paper-grain.svg") repeat;opacity:.035;pointer-events:none;z-index:-1}

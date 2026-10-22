@@ -1,0 +1,102 @@
+/* MSC's opening scene: one object, one invitation, an uninterrupted stage. */
+.object-edition .site-header{height:104px;background:transparent;border-color:#f4e9df30}
+.object-hero{height:175svh;background:#400d21;color:#f7f1e8;position:relative}
+.object-stage{height:100svh;min-height:740px;max-height:1300px;position:sticky;top:0;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 52% 65%,#69213a 0%,#4a1228 42%,#350b1c 100%)}
+.object-stage:after{content:'';position:absolute;inset:0;pointer-events:none;z-index:5;box-shadow:inset 0 0 100px #21061425}
+.object-topline{position:absolute;top:132px;left:4.5vw;right:4.5vw;display:flex;justify-content:space-between;gap:20px;font-size:9px;letter-spacing:.10em;text-transform:uppercase;color:#d5bec3;z-index:3}
+.object-heading{position:absolute;top:19.5%;left:4vw;right:4vw;text-align:center;z-index:2;pointer-events:none;transform:translateY(calc(var(--hero-progress,0)*-28px))}
+.object-eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:.23em;margin-bottom:23px;color:#dac5c9}
+.object-heading h1{font-family:'Times New Roman',Times,serif;font-size:clamp(78px,10.3vw,168px);font-weight:400;line-height:.93;letter-spacing:-.055em;margin:0}
+.object-heading h1 em{font-weight:400;color:#e8c6c9}
+.hero-title-break{display:contents}
+.object-mount{position:absolute;left:5%;right:5%;top:33%;bottom:16%;z-index:2}
+.object-mount canvas{width:100%;height:100%;display:block;opacity:0;transition:opacity .8s ease;touch-action:pan-y}
+.object-mount.scene-ready canvas{opacity:1}
+.object-fallback{position:absolute;inset:0;margin:auto;height:100%;width:100%;object-fit:contain;object-position:center 30%;opacity:1;transition:opacity .65s;mask-image:linear-gradient(transparent,#000 10%,#000 85%,transparent)}
+.scene-ready .object-fallback{opacity:0;pointer-events:none}
+.object-foot{position:absolute;left:4.5vw;right:4.5vw;bottom:84px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;z-index:3}
+.object-intro{font-size:12px;line-height:1.7;max-width:245px;color:#e0ccd0;margin:0}
+.object-join{display:inline-flex;align-items:center;gap:48px;padding:16px 0;border-bottom:1px solid #e6d2d59c;font-size:12px;transition:gap .35s}
+.object-join:hover{gap:65px}.object-join>span{font-size:22px}
+.object-baseline{position:absolute;bottom:0;left:4.5vw;right:4.5vw;min-height:58px;border-top:1px solid #f4e9df35;display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:9px;color:#d5bec3;z-index:3}
+.object-scroll{display:inline-flex;gap:23px;align-items:center;min-height:44px}.object-scroll span{font-size:17px}
+.object-motion{display:flex;gap:10px;align-items:center;font-size:9px;min-height:44px;min-width:94px;justify-content:flex-end}.object-motion>span:first-child{font-size:12px}.object-motion:disabled{cursor:default;opacity:.65}
+.object-note{font-size:9px;letter-spacing:.04em}.static-hero{height:auto}.static-hero .object-stage{position:relative}.static-hero .object-note{visibility:hidden}
+.object-edition .branding-button{position:static;display:inline-flex;background:transparent;border:0;color:#65515b;box-shadow:none;font-size:9px;padding:0;margin-top:24px}
+.object-eyebrow{animation:object-copy-in 1s .1s both}.object-heading h1{animation:object-copy-in 1.2s .18s both}
+@keyframes object-copy-in{from{opacity:0;translate:0 16px;clip-path:inset(0 0 100%)}to{opacity:1;translate:0 0;clip-path:inset(0)}}
+@media(min-width:1800px){.object-mount{left:14%;right:14%}}
+@media(max-width:1000px){.object-edition .site-header{height:90px}.object-topline{top:115px;font-size:8px}.object-heading{top:22%}.object-mount{left:0;right:0;top:38%;bottom:18%}.object-heading h1{font-size:11.5vw}.object-note{display:none}}
+@media(max-width:760px){
+ .object-edition .site-header{height:86px}.object-edition .brand-name{font-size:8px}.object-hero{height:150svh}.object-stage{min-height:760px;max-height:none}
+ .object-topline{top:108px;left:6vw;right:6vw;font-size:7px;letter-spacing:.08em}.object-topline>span:last-child{display:none}
+ .object-heading{top:155px;left:6vw;right:6vw}.object-eyebrow{font-size:8px;margin-bottom:18px;letter-spacing:.18em}
+ .object-heading h1{font-size:clamp(70px,18vw,122px);line-height:.88;letter-spacing:-.065em}.hero-title-break{display:block}
+ .object-mount{top:330px;bottom:165px;left:-4%;right:-4%}
+ .object-foot{left:6vw;right:6vw;bottom:78px;align-items:center;gap:18px}.object-intro{font-size:10px;line-height:1.65;max-width:180px}.object-join{gap:20px;font-size:10px;padding:10px 0;flex-shrink:0}.object-join:hover{gap:20px}.object-join>span{font-size:18px}
+ .object-baseline{left:6vw;right:6vw;min-height:57px;font-size:8px}.object-motion{font-size:8px}.object-scroll{gap:15px}
+}
+@media(max-width:380px){.object-stage{min-height:720px}.object-heading{top:145px}.object-heading h1{font-size:19vw}.object-mount{top:295px;bottom:165px}.object-intro{max-width:152px;font-size:9px}.object-join{font-size:9px;gap:13px}}
+@media(prefers-reduced-motion:reduce){.object-hero{height:auto}.object-stage{position:relative}.object-heading{transform:none}.object-mount canvas,.object-fallback{transition:none}.object-note{display:none}}
+
+/* The case opens into an editorial briefing; every stage adds a next step. */
+.object-hero{height:auto}.object-stage{position:relative}
+.object-hero.story-enhanced{height:330svh}
+.story-enhanced .object-stage{position:sticky}
+.hero-briefing{padding:65px 7vw 80px;background:#400d21;color:#f7f1e8}
+.briefing-chapter{padding:48px 0;border-top:1px solid #ead5d52b;max-width:680px}
+.briefing-kicker{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#dac2c7;margin-bottom:26px;line-height:1.7}
+.object-edition .briefing-chapter h2{font-family:'Times New Roman',Times,serif;font-size:clamp(72px,7.9vw,128px);line-height:.94;letter-spacing:-.06em;margin:0 0 28px}
+.briefing-chapter h2>span{color:#c89aa7}
+.briefing-description{font-size:14px;line-height:1.85;color:#e2cdd2;max-width:360px;margin-bottom:30px}
+.briefing-link{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;font-size:11px;line-height:1.6;padding:11px 0;border-bottom:1px solid #d1afb99c;text-align:left;min-height:44px}
+.briefing-link>span{font-size:20px}.briefing-link:hover{border-color:#fff;color:#fff}
+.briefing-detail{font-size:9px;line-height:1.9;color:#c4a5af;margin:25px 0 0}
+.briefing-actions{display:flex;align-items:flex-start;flex-direction:column;gap:19px}
+.briefing-secondary{font-size:10px;color:#dfc7cd;padding:5px 0}
+.briefing-navigation{display:none;position:absolute;bottom:81px;left:7vw;right:7vw;z-index:6;align-items:center;gap:28px;font-size:9px}
+.briefing-count{font-size:9px;letter-spacing:.06em;color:#d8bac4;font-variant-numeric:tabular-nums;min-width:56px}
+.briefing-step-buttons{display:flex;gap:23px;align-items:center}
+.briefing-step-buttons>button{min-height:44px;position:relative;color:#caa7b4;font-size:10px;padding:0 0 5px}
+.briefing-step-buttons>button:after{content:'';position:absolute;height:1px;bottom:6px;left:0;right:0;background:#f2e4e7;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.briefing-step-buttons>button[aria-current]{color:#fff}.briefing-step-buttons>button[aria-current]:after{transform:scaleX(1)}
+.briefing-progress{position:absolute;bottom:0;left:0;right:0;height:2px;z-index:6;display:none;background:#e2c0cb20}
+.briefing-progress-fill{display:block;width:100%;height:100%;background:#d9b4be;transform:scaleX(0);transform-origin:left}
+.story-enhanced .hero-briefing{position:absolute;inset:0;padding:0;background:transparent;z-index:4;pointer-events:none}
+.story-enhanced .briefing-chapter{position:absolute;left:7vw;top:29%;width:34vw;max-width:490px;opacity:0;transform:translateY(22px);padding:0;border:0}
+.story-enhanced .briefing-chapter:not([inert]){pointer-events:auto}
+.story-enhanced .briefing-navigation{display:flex;opacity:var(--story-navigation,0)}
+.story-enhanced .briefing-progress{display:block}
+.story-enhanced .object-heading{will-change:opacity,transform}
+.story-enhanced .object-mount{will-change:transform}
+.story-enhanced .object-foot[inert],.story-enhanced .briefing-navigation[inert]{pointer-events:none}
+@media(max-width:1000px){
+ .object-hero.story-enhanced{height:350svh}
+ .story-enhanced .briefing-chapter{left:7vw;right:7vw;top:415px;width:auto;max-width:none}
+ .object-edition .briefing-chapter h2{font-size:clamp(63px,9vw,90px);margin-bottom:17px}
+ .briefing-kicker{font-size:8px;margin-bottom:15px}
+ .briefing-description{font-size:12px;line-height:1.75;margin-bottom:15px;max-width:520px}
+ .briefing-detail{font-size:8px;line-height:1.7;margin-top:16px}
+ .briefing-link{font-size:10px;padding:7px 0;gap:22px}
+ .briefing-actions{flex-direction:row;align-items:center;gap:24px;flex-wrap:wrap}
+ .briefing-navigation{bottom:76px}
+}
+@media(max-width:760px){
+ .story-enhanced .briefing-chapter{top:405px;left:6vw;right:6vw}
+ .object-edition .briefing-chapter h2{font-size:clamp(62px,16.5vw,85px)}
+ .briefing-description{font-size:11px;max-width:380px}
+ .briefing-detail{font-size:7px;margin-top:12px}
+ .story-enhanced .briefing-detail{display:none}
+ .briefing-navigation{left:6vw;right:6vw;gap:20px}
+ .briefing-step-buttons{gap:20px}.briefing-step-buttons>button{font-size:9px}
+ .briefing-actions{gap:12px}.briefing-secondary{font-size:9px}
+ .hero-briefing{padding:30px 6vw 65px}
+}
+@media(max-width:380px){
+ .story-enhanced .briefing-chapter{top:377px}
+ .object-edition .briefing-chapter h2{font-size:59px}
+ .briefing-description{font-size:10px;line-height:1.7}
+ .briefing-kicker{font-size:7px}.briefing-link{font-size:9px}
+ .briefing-step-buttons{gap:16px}.briefing-navigation{gap:16px;bottom:65px}
+}
+@media(prefers-reduced-motion:reduce){.object-hero.story-enhanced{height:auto}.briefing-step-buttons>button:after{transition:none}}

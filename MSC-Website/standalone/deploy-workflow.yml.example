@@ -1,0 +1,31 @@
+# Optional: copy to .github/workflows/deploy.yml in the independent repository.
+# First commit the completed non-secret standalone/wrangler.json. Set a GitHub
+# environment named production, with club reviewers and these two secrets.
+name: Deploy MSC
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: msc-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: standalone
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: standalone/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

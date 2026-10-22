@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "msc-club",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {"directory": "./.assets", "binding": "ASSETS", "run_worker_first": true},
+  "d1_databases": [{"binding": "DB", "database_name": "msc-club", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "../drizzle"}],
+  "vars": {
+    "MSC_PUBLIC_ORIGIN": "",
+    "MSC_ACCESS_TEAM_DOMAIN": "",
+    "MSC_ACCESS_AUD": "",
+    "MSC_ADMIN_EMAILS": "managementstrategycouncil@gmail.com",
+    "MSC_EMAIL_ENABLED": "false",
+    "MSC_EMAIL_FROM": ""
+  }
+}
