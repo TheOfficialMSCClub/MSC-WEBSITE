@@ -1,0 +1,24 @@
+// Raster motion comes from the authored 3D surfaces, not image feature guesses.
+import fs from'node:fs';import path from'node:path';import * as T from'../dist/vendor/three/three.module.min.js';import{createBriefcase}from'../dist/briefcase-model.mjs';
+const out=process.argv[2],manifest=JSON.parse(fs.readFileSync(new URL('../dist/assets/case-continuous-v1/manifest.json',import.meta.url)));fs.mkdirSync(out,{recursive:true});
+const {group,hinge}=createBriefcase();group.updateMatrixWorld(true);const base=[],lid=[],fabricBase=[],fabricLid=[],shellLid=[];const hingeInverse=hinge.matrixWorld.clone().invert();
+group.traverse(object=>{if(!object.isMesh)return;let parent=object,isLid=false;while(parent){if(parent===hinge)isLid=true;parent=parent.parent;}const target=isLid?lid:base,matrix=isLid?hingeInverse.clone().multiply(object.matrixWorld):object.matrixWorld;const add=transform=>{const attr=object.geometry.attributes.position,indices=object.geometry.index;for(let i=0;i<(indices?indices.count:attr.count);i++){const v=new T.Vector3().fromBufferAttribute(attr,indices?indices.getX(i):i).applyMatrix4(transform);target.push(v.x,v.y,v.z);if(isLid&&(object.material.metalness>.7||object.material.color.getHex()===0x141313))shellLid.push(v.x,v.y,v.z);if(object.material.sheen||object.material.color.getHex()===0x450d19){(isLid?fabricLid:fabricBase).push(v.x,v.y,v.z,v.x,v.z-(isLid?1.84:0));}}};if(object.isInstancedMesh){for(let i=0;i<object.count;i++){const m=new T.Matrix4();object.getMatrixAt(i,m);add(matrix.clone().multiply(m));}}else add(matrix);});
+for(const [name,data]of[['base',base],['lid',lid],['fabric-base',fabricBase],['fabric-lid',fabricLid]])fs.writeFileSync(path.join(out,name+'.bin'),new Uint8Array(new Float32Array(data).buffer));
+// A recessed lid insert has real sloping returns and a back panel, inside the original metal rim.
+const rings=[[2.73,1.705,.021],[2.69,1.665,.038],[2.63,1.605,.065],[2.49,1.465,.275],[2.46,1.435,.31]];
+// Use a consistent clockwise rounded rectangle for each nested ring.
+const contour=(x,z)=>{const points=[];for(let corner=0;corner<4;corner++){const a0=corner*Math.PI/2,cx=(corner===0||corner===3?1:-1)*(x-.10),cz=(corner<2?1:-1)*(z-.10);for(let j=0;j<12;j++){const a=a0+j/11*Math.PI/2;points.push([cx+Math.cos(a)*.10,cz+Math.sin(a)*.10]);}}return points;};
+const deep=[],deepPositions=[],addDeep=(x,y,z)=>{deep.push(x,y,z+1.84,x,z);deepPositions.push(x,y,z+1.84);};
+for(let k=0;k<rings.length-1;k++){const a=rings[k],b=rings[k+1],pa=contour(a[0],a[1]),pb=contour(b[0],b[1]);for(let i=0;i<pa.length;i++){const j=(i+1)%pa.length;for(const [point,y]of[[pa[i],a[2]],[pa[j],a[2]],[pb[j],b[2]],[pa[i],a[2]],[pb[j],b[2]],[pb[i],b[2]]])addDeep(point[0],y,point[1]);}}
+const last=rings.at(-1),outline=contour(last[0],last[1]);for(let i=0;i<outline.length;i++){const j=(i+1)%outline.length;for(const point of[[0,0],outline[i],outline[j]])addDeep(point[0],last[2],point[1]);}
+for(const [name,data]of[['lid-shell',shellLid],['lid-depth',deepPositions],['fabric-lid-depth',deep]])fs.writeFileSync(path.join(out,name+'.bin'),new Uint8Array(new Float32Array(data).buffer));
+const smooth=(p,a,b)=>{const t=Math.max(0,Math.min(1,(p-a)/(b-a)));return t*t*(3-2*t);},C=new T.Matrix4().makeRotationX(Math.PI/2),camera=new T.OrthographicCamera();camera.up.set(0,0,1);const frames=[];
+for(let i=0;i<=51;i++){
+ const p=i/140,opening=smooth(p,.015,.36),network=smooth(p,.36,.65),succeed=smooth(p,.66,1),rot=new T.Matrix4().makeRotationX(.025+.075*network-.10*succeed).multiply(new T.Matrix4().makeRotationY(-.19-.28*network+.62*succeed)).multiply(new T.Matrix4().makeRotationZ(-.015-.05*network+.08*succeed));
+ const scale=10.8-.35*network-.35*succeed;camera.left=-scale/2;camera.right=scale/2;camera.top=scale/2;camera.bottom=-scale/2;camera.near=.1;camera.far=100;camera.position.set(-3.6+9.4*network-7.6*succeed,-11+1.2*network+1.4*succeed,8+1.8*network+2.7*succeed);camera.lookAt(-.08+.18*succeed,0,1.52+.32*succeed);camera.updateMatrixWorld(true);camera.updateProjectionMatrix();
+ const vp=camera.projectionMatrix.clone().multiply(camera.matrixWorldInverse).multiply(C).multiply(rot);
+ const point=new T.Vector3(-1.91,-.053,.04).applyMatrix4(vp),raw=[(point.x+1)*612,(1-point.y)*612],target=manifest.papers[i][0][0],shift=[target[0]-raw[0],target[1]-raw[1]];
+ const adjust=new T.Matrix4().set(1224/896,0,0,(1224+2*shift[0])/896-1,0,1224/896,0,1-(1224+2*shift[1])/896,0,0,1,0,0,0,0,1),baseMVP=adjust.multiply(vp),lidMVP=baseMVP.clone().multiply(new T.Matrix4().makeTranslation(0,.205,-1.84)).multiply(new T.Matrix4().makeRotationX(-(.13+opening*1.79)));
+ frames.push({base:baseMVP.toArray(),lid:lidMVP.toArray()});
+}
+fs.writeFileSync(path.join(out,'motion.json'),JSON.stringify(frames));console.log(`Exported ${base.length/3} base and ${lid.length/3} lid vertices with 52 exact camera matrices.`);

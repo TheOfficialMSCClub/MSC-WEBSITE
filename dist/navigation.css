@@ -1,0 +1,6 @@
+/* Navigation stays available through the complete case sequence and every section. */
+.object-edition .site-header{position:fixed;inset:0 0 auto;z-index:80;background:#400d21;color:#fff6ec;border-bottom:1px solid #e6ced42b;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:background .25s,color .25s,border-color .25s}
+.object-edition .site-header.past-hero{position:fixed;inset:0 0 auto;z-index:80;animation:none;background:#400d21;color:#fff6ec;border-color:#e6ced42b}.object-edition .site-header.past-hero .brand-name{border-color:#ffffff60}
+@media(max-width:760px){.object-edition .join-header{display:inline-flex;align-items:center;font-size:10px;white-space:nowrap}.object-edition .nav-actions{gap:22px}}
+@media(max-width:600px){.object-edition .site-header .brand-name{display:none}}
+@media(prefers-reduced-motion:reduce){.object-edition .site-header{transition:none}}

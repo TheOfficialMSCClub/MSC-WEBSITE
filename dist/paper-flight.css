@@ -1,0 +1,27 @@
+/* A single cotton-paper insert lifts from the tray and settles inside the open lid. */
+.briefing-paper-summary{display:none}
+.story-enhanced .briefing-sheet{box-sizing:border-box;position:absolute;left:0;top:0;width:520px;height:310px;transform-origin:0 0;opacity:0;isolation:isolate;background:#f4ecdc url('assets/paper-grain.svg') repeat;background-size:210px;border:1px solid #e4d7bf;box-shadow:1px 2px 0 #b2a28b,0 4px 10px #130b1455;backface-visibility:hidden;color:#571020;pointer-events:none}
+.story-enhanced .briefing-sheet::after{content:'MSC / FIELD BRIEF                           UTSC · 2026–27';white-space:pre;position:absolute;left:30px;right:30px;bottom:13px;border-top:1px solid #8f78604d;padding-top:7px;font:9px/1.5 'Courier New',monospace;letter-spacing:.05em;color:#826e60;pointer-events:none}
+.story-enhanced .object-stage .briefing-chapter{box-sizing:border-box;position:absolute;inset:0;width:100%;max-width:none;padding:25px 30px 36px;transform:none;border:0;color:#571020;text-shadow:none}
+.story-enhanced .paper-landed .briefing-chapter{transition:opacity .32s ease}
+.story-enhanced .briefing-chapter .briefing-kicker{font:11px/1.5 'Courier New',monospace;letter-spacing:.08em;color:#826454;margin:0 0 10px}
+.object-edition .story-enhanced .briefing-chapter h2{font:400 82px/.94 'Times New Roman',serif;letter-spacing:-.05em;margin:0 0 12px;color:#571020}
+.story-enhanced .briefing-chapter h2>span{color:#9a6066}
+.story-enhanced .briefing-chapter .briefing-description,.story-enhanced .briefing-chapter .briefing-detail,.story-enhanced .briefing-chapter .briefing-secondary{display:none}
+.story-enhanced .briefing-chapter .briefing-paper-summary{display:block;font:22px/1.32 Arial,sans-serif;color:#796353;max-width:450px;margin:0 0 10px}
+.story-enhanced .briefing-chapter .briefing-link{font:20px/1.25 Arial,sans-serif;color:#571020;padding:4px 0;min-height:44px;border-color:#a88d7777;gap:20px}
+.story-enhanced .briefing-chapter .briefing-link:hover{color:#341019;border-color:#571020}
+.story-enhanced .briefing-actions{display:block}
+@media(max-width:760px){.story-enhanced .briefing-chapter .briefing-paper-summary{font-size:26px;line-height:1.2}.story-enhanced .briefing-chapter .briefing-link{font-size:24px;line-height:1.15}.story-enhanced .briefing-chapter .briefing-kicker{font-size:13px}.story-enhanced .briefing-sheet::after{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.briefing-sheet{display:none}.briefing-chapter{transform:none!important;transition:none!important}}
+
+/* The object and its three physical pages share one continuously animated camera. */
+.case-camera{position:absolute;inset:0;z-index:3;transform-origin:0 0;will-change:transform;pointer-events:none}
+.case-camera .object-mount{pointer-events:none}
+.story-enhanced .briefing-sheet{box-shadow:1px 2px 0 #b2a28b,0 calc(4px + var(--paper-lift,0)*18px) calc(10px + var(--paper-lift,0)*28px) #130b1455;will-change:transform}
+.story-enhanced .paper-landed .briefing-chapter{transition:none}
+.story-enhanced .briefing-sheet>.briefing-chapter:not([inert]){pointer-events:auto}
+.object-hero.story-enhanced{height:490svh}
+@media(max-width:1000px){.object-hero.story-enhanced{height:510svh}}
+@media(max-width:760px){.object-hero.story-enhanced{height:530svh}}
+@media(prefers-reduced-motion:reduce){.case-camera{transform:none!important;will-change:auto}.object-hero.story-enhanced{height:auto}}

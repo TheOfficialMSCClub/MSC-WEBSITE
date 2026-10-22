@@ -1,0 +1,9 @@
+import fs from 'node:fs';
+import * as T from '../dist/vendor/three/three.module.min.js';
+import {createChessModel} from '../dist/chess-model.mjs';
+import {councilPieces,associatePlaceholders} from '../dist/chess-roster.mjs';
+const content=JSON.parse(fs.readFileSync(new URL('../dist/content.json',import.meta.url))),model=createChessModel([...councilPieces(content.members),...associatePlaceholders]);for(const h of model.halos)h.visible=false;model.group.rotation.y=-.12;model.group.updateMatrixWorld(true);
+const geometry={},materials={},textures={},nodes=[];
+model.group.traverse(o=>{if(!o.isMesh||!o.visible)return;const g=o.geometry,m=o.material;if(!geometry[g.uuid])geometry[g.uuid]={position:[...g.attributes.position.array],normal:[...g.attributes.normal.array],uv:g.attributes.uv?[...g.attributes.uv.array]:[],index:g.index?[...g.index.array]:null};if(!materials[m.uuid])materials[m.uuid]={color:m.color.toArray(),metalness:m.metalness||0,roughness:m.roughness??.6,coat:m.clearcoat||0,map:m.map?.uuid||null};if(m.map&&!textures[m.map.uuid])textures[m.map.uuid]={width:m.map.image.width,height:m.map.image.height,data:[...m.map.image.data]};nodes.push({name:o.name||'Chess component',geometry:g.uuid,material:m.uuid,matrix:o.matrixWorld.toArray()});});
+const camera=new T.PerspectiveCamera(36,1.2,.1,90);camera.position.set(17.5*.51,17.5*.62,17.5*.75);camera.lookAt(0,.3,0);camera.updateMatrixWorld(true);const light=new T.OrthographicCamera(-8,8,8,-8,.5,35);light.position.set(-3,9,7);light.lookAt(0,0,0);light.updateMatrixWorld(true);
+fs.writeFileSync(process.argv[2],JSON.stringify({geometry,materials,textures,nodes,camera:{position:camera.position.toArray(),matrix:camera.projectionMatrix.clone().multiply(camera.matrixWorldInverse).toArray()},light:light.projectionMatrix.clone().multiply(light.matrixWorldInverse).toArray()}));console.log(`Exported ${nodes.length} detailed council chess components and ${Object.keys(textures).length} material maps.`);

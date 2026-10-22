@@ -1,0 +1,44 @@
+/* The open board becomes an editorial directory. */
+.chess-experience{scroll-margin-top:70px}
+.chess-copy{padding-top:12px}
+.object-edition .chess-copy h2{font-size:clamp(64px,6.7vw,105px)}
+.chess-copy>p:not(.thinking-eyebrow):not(.chess-status){margin-bottom:25px;font-size:13px}
+.chess-instruction{min-height:230px;max-width:340px}
+.chess-profile[hidden],.chess-instruction[hidden],.chess-piece-label[hidden],.chess-controls>button[hidden]{display:none}
+.chess-profile{border-top:1px solid #afa28e;padding-top:20px;display:grid;grid-template-columns:94px minmax(0,1fr);column-gap:18px;max-width:370px;min-height:230px;align-content:start}
+.chess-profile-portrait{height:126px;position:relative;background:#c9bbab;border:5px solid #f2ece2;outline:1px solid #a79280;box-shadow:0 5px 12px #49392b15}
+.chess-profile-portrait svg{display:block;width:100%;height:100%}
+.chess-profile-details{align-self:center;min-width:0}
+.chess-profile-details>p:first-child{font:8px/1.6 'Courier New',monospace;text-transform:uppercase;letter-spacing:.035em;color:#804451;margin:0 0 10px}
+.object-edition .chess-profile h3{font:400 clamp(25px,2.6vw,38px)/1 'Times New Roman',serif;letter-spacing:-.025em;margin:0 0 10px}
+#chess-profile-role{font:11px/1.6 Arial,sans-serif;color:#74685a;margin:0}
+.chess-profile-meaning{grid-column:1/-1;font:12px/1.7 Arial,sans-serif;color:#74685a;margin:18px 0 10px;max-width:310px}
+#chess-full-profile{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;font:11px Arial,sans-serif;color:#571020;min-height:44px;border-bottom:1px solid #b9a69a;width:100%;text-align:left}
+#chess-full-profile span{font-size:20px}
+.chess-controls{margin-top:20px;gap:18px}
+.chess-mount{min-height:650px}
+.chess-piece-label{position:absolute;z-index:2;bottom:32px;left:50%;transform:translateX(-50%);max-width:90%;white-space:nowrap;background:#f3ece1f0;color:#571020;padding:10px 14px;font:11px Arial,sans-serif;border:1px solid #b4a28b;pointer-events:none}
+.chess-roster{grid-column:1/-1;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;margin-top:48px;border-top:1px solid #b7aa99;padding-top:24px}
+.chess-department{min-width:0}.chess-department h3{display:flex;align-items:center;gap:7px;font:11px/1.5 Arial,sans-serif;margin:0;color:#40322d;min-height:42px}.chess-department h3>span{font:30px/1 'Times New Roman',serif;color:#571020;flex-shrink:0}
+.chess-department>p{font:9px 'Courier New',monospace;color:#8b665e;margin:5px 0 15px;padding-left:31px}
+.chess-department button{display:block;min-height:42px;width:100%;text-align:left;color:#76665a;font:11px/1.5 Arial,sans-serif;border-bottom:1px solid #baab981f;padding:8px 0 8px 10px;border-left:2px solid transparent;transition:color .2s,border-color .2s,background .2s}
+.chess-department button:hover,.chess-department button.chess-preview,.chess-department button[aria-pressed=true]{color:#571020;background:#57102008;border-left-color:#571020}
+.chess-department button:focus-visible,#chess-full-profile:focus-visible{outline:2px solid #571020;outline-offset:3px}
+.chess-roster-loading{grid-column:1/-1;font:12px Arial,sans-serif}
+@media(min-width:761px){.chess-visual-caption{min-height:28px}}
+@media(max-width:1100px){.chess-roster{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 30px}.chess-mount{min-height:630px}.chess-profile{grid-template-columns:78px minmax(0,1fr);column-gap:14px}.chess-profile-portrait{height:112px}.object-edition .chess-profile h3{font-size:29px}.chess-controls{gap:12px}}
+@media(max-width:760px){.object-edition .chess-copy h2{font-size:clamp(64px,15vw,90px)}.chess-copy>p:not(.thinking-eyebrow):not(.chess-status){font-size:12px;margin-bottom:24px}.chess-instruction{min-height:150px;max-width:none}.chess-profile{min-height:230px;grid-template-columns:94px minmax(0,1fr);max-width:none}.chess-profile-portrait{height:126px}.object-edition .chess-profile h3{font-size:35px}.chess-profile-meaning{margin-top:15px;max-width:none}.chess-controls{gap:18px;margin-top:14px}.chess-mount{height:410px;min-height:410px}.chess-roster{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 22px;margin-top:30px}.chess-department button{font-size:12px;min-height:44px}.chess-department h3{font-size:12px}.chess-department>p{margin-bottom:10px}.chess-piece-label{font-size:10px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){.chess-profile{animation:none}.chess-department button{transition:none}}
+
+.chess-profile-browse{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;margin-top:10px;color:#74584f}
+.chess-profile-browse>button{width:46px;min-height:44px;font:22px 'Times New Roman',serif;border:1px solid #ae968361;transition:background .2s,color .2s}
+.chess-profile-browse>button:hover{background:#571020;color:#f2ece2}
+#chess-person-count{font:10px 'Courier New',monospace;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.chess-profile-browse>button:focus-visible,.chess-mount:focus-visible{outline:2px solid #571020;outline-offset:4px}
+.chess-mount:focus-visible{outline-offset:-12px}
+@media(prefers-reduced-motion:reduce){.chess-profile-browse>button{transition:none}}
+
+.chess-associate-reserved{border:1px dashed #af9985;padding:14px 12px;color:#806b5d;font:11px/1.6 Arial,sans-serif;background:#f2ece141}
+.chess-associate-reserved>span{display:block;font:8px/1.8 "Courier New",monospace;margin-top:8px;color:#8b7667}
+
+.chess-subdepartment{margin-top:15px}.chess-subdepartment+.chess-subdepartment{padding-top:13px;border-top:1px solid #b9aa9755}.chess-subdepartment h4{font:9px/1.5 "Courier New",monospace;font-weight:400;color:#8b665e;margin:0 0 8px;padding-left:10px}

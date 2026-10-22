@@ -1,0 +1,610 @@
+{
+  "club": {
+    "name": "Management Strategy Council",
+    "shortName": "MSC",
+    "campus": "University of Toronto Scarborough",
+    "instagram": "https://www.instagram.com/msc.uoft/",
+    "handle": "@msc.uoft",
+    "tagline": "Learn. Network. Succeed."
+  },
+  "events": [
+    {
+      "id": "summit",
+      "name": "Strategy Summit",
+      "category": "Competitions",
+      "format": "Case competition",
+      "status": "Details to be confirmed",
+      "description": "MSC’s Strategy Summit case competition. Event details and registration will be added after the council confirms them.",
+      "image": "assets/briefcase.webp",
+      "art": "case",
+      "note": "Strategy Summit is based on MSC’s event design work. Date, format, eligibility, and registration still need confirmation for this website."
+    }
+  ],
+  "departments": [
+    {
+      "name": "Co-Presidents",
+      "description": "Setting the direction. Bringing the council together.",
+      "code": "CP"
+    },
+    {
+      "name": "Corporate Relations",
+      "description": "Building relationships beyond the classroom.",
+      "code": "CR"
+    },
+    {
+      "name": "Finance",
+      "description": "Making the ambition add up.",
+      "code": "FN"
+    },
+    {
+      "name": "Operations",
+      "description": "Turning plans into experiences.",
+      "code": "OP"
+    },
+    {
+      "name": "Events",
+      "description": "Creating the moments that bring us together.",
+      "code": "EV"
+    },
+    {
+      "name": "Marketing",
+      "description": "Giving the council a voice and a point of view.",
+      "code": "MK"
+    }
+  ],
+  "words": [
+    {
+      "term": "iteration",
+      "type": "MSC Word of the Week",
+      "definition": "Repeating a process, using what you learn each time to improve the next version.",
+      "example": "Revise your case presentation after feedback. Test the next version. Keep what works; improve what doesn’t.",
+      "source": "An existing MSC Word of the Week topic; definition paraphrased for this website."
+    },
+    {
+      "term": "trade-off",
+      "type": "Preview entry",
+      "definition": "A choice in which gaining one benefit means giving up another.",
+      "example": "Choosing a smaller event can mean fewer attendees, but more time for each conversation.",
+      "source": "Illustrative strategy explainer. Not yet confirmed as a published MSC Word of the Week."
+    },
+    {
+      "term": "positioning",
+      "type": "Preview entry",
+      "definition": "The distinct place an organization aims to occupy in the minds of its audience.",
+      "example": "Decide who your event is for and what makes it valuable before writing the promotion.",
+      "source": "Illustrative strategy explainer. Not yet confirmed as a published MSC Word of the Week."
+    }
+  ],
+  "assets": {
+    "010939": {
+      "src": "assets/members/010939.webp",
+      "width": 1100,
+      "height": 1348
+    },
+    "010946": {
+      "src": "assets/members/010946.webp",
+      "width": 1100,
+      "height": 1339
+    },
+    "010952": {
+      "src": "assets/members/010952.webp",
+      "width": 1100,
+      "height": 1354
+    },
+    "011005": {
+      "src": "assets/members/011005.webp",
+      "width": 1100,
+      "height": 1384
+    },
+    "011016": {
+      "src": "assets/members/011016.webp",
+      "width": 1100,
+      "height": 1359
+    },
+    "011023": {
+      "src": "assets/members/011023.webp",
+      "width": 1100,
+      "height": 1348
+    },
+    "011029": {
+      "src": "assets/members/011029.webp",
+      "width": 1100,
+      "height": 1355
+    },
+    "011036": {
+      "src": "assets/members/011036.webp",
+      "width": 1100,
+      "height": 1403
+    },
+    "011113": {
+      "src": "assets/members/011113.webp",
+      "width": 1100,
+      "height": 1378
+    },
+    "011120": {
+      "src": "assets/members/011120.webp",
+      "width": 1100,
+      "height": 1347
+    },
+    "011141": {
+      "src": "assets/members/011141.webp",
+      "width": 1100,
+      "height": 1350
+    },
+    "011207": {
+      "src": "assets/members/011207.webp",
+      "width": 1100,
+      "height": 1355
+    },
+    "011212": {
+      "src": "assets/members/011212.webp",
+      "width": 1100,
+      "height": 1365
+    },
+    "011224": {
+      "src": "assets/members/011224.webp",
+      "width": 1100,
+      "height": 1364
+    },
+    "011231": {
+      "src": "assets/members/011231.webp",
+      "width": 1100,
+      "height": 1351
+    },
+    "011240": {
+      "src": "assets/members/011240.webp",
+      "width": 1100,
+      "height": 1359
+    },
+    "011327": {
+      "src": "assets/members/011327.webp",
+      "width": 1100,
+      "height": 1382
+    },
+    "011347": {
+      "src": "assets/members/011347.webp",
+      "width": 1100,
+      "height": 1382
+    },
+    "011355": {
+      "src": "assets/members/011355.webp",
+      "width": 1100,
+      "height": 1368
+    },
+    "011403": {
+      "src": "assets/members/011403.webp",
+      "width": 1100,
+      "height": 1352
+    },
+    "011720": {
+      "src": "assets/members/011720.webp",
+      "width": 1100,
+      "height": 1373
+    },
+    "011805": {
+      "src": "assets/members/011805.webp",
+      "width": 1100,
+      "height": 1354
+    },
+    "011816": {
+      "src": "assets/members/011816.webp",
+      "width": 1100,
+      "height": 1355
+    },
+    "011828": {
+      "src": "assets/members/011828.webp",
+      "width": 1100,
+      "height": 1382
+    },
+    "011910": {
+      "src": "assets/members/011910.webp",
+      "width": 1100,
+      "height": 1354
+    },
+    "011921": {
+      "src": "assets/members/011921.webp",
+      "width": 1100,
+      "height": 1364
+    },
+    "011929": {
+      "src": "assets/members/011929.webp",
+      "width": 1100,
+      "height": 1370
+    }
+  },
+  "members": [
+    {
+      "id": "joe-kuang",
+      "name": "Joe Kuang",
+      "role": "Co-President",
+      "department": "Co-Presidents",
+      "asset": "010952",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "billy-batsaikhan",
+      "name": "Billy Batsaikhan",
+      "role": "Co-President",
+      "department": "Co-Presidents",
+      "asset": "010946",
+      "crop": [
+        0.11,
+        0.165,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "amy-kang",
+      "name": "Amy Kang",
+      "role": "Vice President of Operations",
+      "department": "Operations",
+      "asset": "011016",
+      "crop": [
+        0.11,
+        0.12,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "geser-ganbold",
+      "name": "Geser Ganbold",
+      "role": "Director of Operations",
+      "department": "Operations",
+      "asset": "011023",
+      "crop": [
+        0.53,
+        0.125,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "meghana-kuchipudi",
+      "name": "Meghana Kuchipudi",
+      "role": "Vice President of Marketing",
+      "department": "Marketing",
+      "asset": "011113",
+      "crop": [
+        0.11,
+        0.15,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "nicholas-mok",
+      "name": "Nicholas Mok",
+      "role": "Vice President of Marketing",
+      "department": "Marketing",
+      "asset": "011120",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "jayden-li",
+      "name": "Jayden Li",
+      "role": "Director of Marketing",
+      "department": "Marketing",
+      "asset": "011212",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "joshua-chan",
+      "name": "Joshua Chan",
+      "role": "Director of Marketing",
+      "department": "Marketing",
+      "asset": "011207",
+      "crop": [
+        0.11,
+        0.145,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "kimberly-sutjiono",
+      "name": "Kimberly Sutjiono",
+      "role": "Vice President of Finance",
+      "department": "Finance",
+      "asset": "011231",
+      "crop": [
+        0.11,
+        0.135,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "jacob-lee",
+      "name": "Jacob Lee",
+      "role": "Director of Finance",
+      "department": "Finance",
+      "asset": "011240",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "eren-ehli",
+      "name": "Eren Ehli",
+      "role": "Vice President of Events",
+      "department": "Events",
+      "asset": "011355",
+      "crop": [
+        0.11,
+        0.15,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "laila-yick-lewis",
+      "name": "Laila Yick-Lewis",
+      "role": "Vice President of Events",
+      "department": "Events",
+      "asset": "011403",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "angelina-bell",
+      "name": "Angelina Bell",
+      "role": "Director of Events",
+      "department": "Events",
+      "asset": "011816",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "melissa-vu",
+      "name": "Melissa Vu",
+      "role": "Director of Events",
+      "department": "Events",
+      "asset": "011805",
+      "crop": [
+        0.11,
+        0.15,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "anudari-esen",
+      "name": "Anudari Esen",
+      "role": "Vice President of Corporate Relations",
+      "department": "Corporate Relations",
+      "asset": "011910",
+      "crop": [
+        0.11,
+        0.16,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "jayden-lee",
+      "name": "Jayden Lee",
+      "role": "Director of Corporate Relations",
+      "department": "Corporate Relations",
+      "asset": "011921",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "angelie-samlal",
+      "name": "Angelie Samlal",
+      "role": "Director of Corporate Relations",
+      "department": "Corporate Relations",
+      "asset": "011929",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Co-Presidents",
+      "asset": "010939",
+      "crop": [
+        0.06,
+        0.27,
+        0.89,
+        0.66
+      ]
+    },
+    {
+      "name": "Operations",
+      "asset": "011005",
+      "crop": [
+        0.055,
+        0.3,
+        0.9,
+        0.62
+      ]
+    },
+    {
+      "name": "Marketing",
+      "asset": "011029",
+      "crop": [
+        0.045,
+        0.43,
+        0.91,
+        0.5
+      ]
+    },
+    {
+      "name": "Finance",
+      "asset": "011224",
+      "crop": [
+        0.055,
+        0.3,
+        0.9,
+        0.63
+      ]
+    },
+    {
+      "name": "Events",
+      "asset": "011327",
+      "crop": [
+        0.055,
+        0.3,
+        0.9,
+        0.63
+      ]
+    },
+    {
+      "name": "Corporate Relations",
+      "asset": "011828",
+      "crop": [
+        0.05,
+        0.3,
+        0.91,
+        0.63
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "asset": "010939",
+      "title": "Co-Presidents — team portrait"
+    },
+    {
+      "asset": "010946",
+      "title": "Billy Batsaikhan"
+    },
+    {
+      "asset": "010952",
+      "title": "Joe Kuang"
+    },
+    {
+      "asset": "011005",
+      "title": "Operations — team portrait"
+    },
+    {
+      "asset": "011016",
+      "title": "Amy Kang"
+    },
+    {
+      "asset": "011023",
+      "title": "Geser Ganbold"
+    },
+    {
+      "asset": "011029",
+      "title": "Marketing — team portrait"
+    },
+    {
+      "asset": "011036",
+      "title": "Council editorial — 8"
+    },
+    {
+      "asset": "011113",
+      "title": "Meghana Kuchipudi"
+    },
+    {
+      "asset": "011120",
+      "title": "Nicholas Mok"
+    },
+    {
+      "asset": "011141",
+      "title": "Council editorial — 11"
+    },
+    {
+      "asset": "011207",
+      "title": "Joshua Chan"
+    },
+    {
+      "asset": "011212",
+      "title": "Jayden Li"
+    },
+    {
+      "asset": "011224",
+      "title": "Finance — team portrait"
+    },
+    {
+      "asset": "011231",
+      "title": "Kimberly Sutjiono"
+    },
+    {
+      "asset": "011240",
+      "title": "Jacob Lee"
+    },
+    {
+      "asset": "011327",
+      "title": "Events — team portrait"
+    },
+    {
+      "asset": "011347",
+      "title": "Council editorial — 18"
+    },
+    {
+      "asset": "011355",
+      "title": "Eren Ehli"
+    },
+    {
+      "asset": "011403",
+      "title": "Laila Yick-Lewis"
+    },
+    {
+      "asset": "011720",
+      "title": "Council editorial — 21"
+    },
+    {
+      "asset": "011805",
+      "title": "Melissa Vu"
+    },
+    {
+      "asset": "011816",
+      "title": "Angelina Bell"
+    },
+    {
+      "asset": "011828",
+      "title": "Corporate Relations — team portrait"
+    },
+    {
+      "asset": "011910",
+      "title": "Anudari Esen"
+    },
+    {
+      "asset": "011921",
+      "title": "Jayden Lee"
+    },
+    {
+      "asset": "011929",
+      "title": "Angelie Samlal"
+    }
+  ]
+}
