@@ -1,0 +1,60 @@
+/* The letter belongs to the same charcoal, burgundy and ivory studio as the case. */
+.letter-dialog{width:min(900px,calc(100vw - 24px));max-width:none;max-height:92svh;margin:auto;padding:40px 60px 75px;border:1px solid #6c4b54;background:#231d21;color:#f8f6f1;overflow:auto;overscroll-behavior:contain;box-shadow:0 30px 100px #0008}
+.letter-dialog::backdrop{background:#100d11d9;backdrop-filter:blur(6px)}
+.letter-close{position:sticky;top:0;float:right;margin:-20px -38px 0 0;z-index:15;font-size:30px;min-width:44px;min-height:44px;color:#f8f6f1;background:#231d21}
+.letter-scene{position:relative;perspective:1400px;isolation:isolate;min-height:390px;padding-top:28px}
+#letter-content{position:relative;z-index:3;transform-style:preserve-3d}
+.letter-paper{position:relative;background:#f8f6f1 url('assets/paper-grain.svg');color:#282126;padding:38px 42px 34px;box-shadow:0 10px 30px #0005;font:19px/2 var(--msc-display,Georgia,serif);transform-origin:50% 65%;transition:transform 1.05s cubic-bezier(.2,.7,.2,1),opacity .3s;overflow:hidden}
+.letter-kicker{font:11px/1.5 var(--msc-body,Arial,sans-serif);text-transform:uppercase;letter-spacing:.1em;color:#675e63;margin:0 0 28px}
+.letter-paper h2{font:italic 400 25px/1.35 var(--msc-display,Georgia,serif);margin:0 0 22px;letter-spacing:-.025em}
+.letter-paper p{margin:0 0 20px}
+.letter-blank{display:inline-block;max-width:100%;vertical-align:baseline}
+.letter-paper :is(input:not([type=checkbox]),select){font:inherit;line-height:1.6;padding:4px 3px;background:transparent;border:0;border-bottom:1px solid #8f737b;border-radius:0;color:#571020;max-width:100%;min-width:0}
+.letter-paper input[name=name]{width:190px}.letter-paper input[name=email]{width:260px}.letter-paper input[name=program]{width:230px}.letter-paper input[name=organization]{width:220px}.letter-paper input[name=role]{width:180px}
+.letter-paper input::placeholder,.letter-paper textarea::placeholder{color:#766870;opacity:1}
+.letter-paper select{max-width:100%;cursor:pointer}
+.letter-paper input[aria-invalid=true],.letter-paper textarea[aria-invalid=true],.letter-paper select[aria-invalid=true]{border:2px solid #8f182f;background:#8f182f0b}
+.letter-paper :is(input,select,textarea,button,a):focus-visible{outline:2px solid #571020;outline-offset:3px}
+.letter-paper fieldset{border:0;padding:0;margin:24px 0;font:15px/1.6 var(--msc-body,Arial,sans-serif);min-width:0}.letter-paper legend{padding:0;margin-bottom:12px}
+.letter-interests{display:flex;flex-wrap:wrap;gap:8px}
+.letter-interests label{display:flex;align-items:center;gap:7px;border:1px solid #c7b9bd;padding:8px 10px;cursor:pointer;min-height:44px}
+.letter-interests label:has(:checked){border-color:#571020;background:#5710200a;color:#571020}
+.letter-interests input{width:16px;height:16px;accent-color:#571020}
+.letter-note,.letter-copy-label{display:block;font:15px/1.65 var(--msc-body,Arial,sans-serif);margin:22px 0}.letter-note>span{color:#675e63}
+.letter-note textarea,.letter-copy-label textarea{display:block;width:100%;resize:vertical;min-height:90px;background:#fffefa99;border:1px solid #c7b9bd;border-radius:0;padding:12px;margin-top:8px;font:16px/1.6 var(--msc-body,Arial,sans-serif);color:#282126;box-sizing:border-box}
+.letter-copy-label textarea{min-height:220px}
+.letter-signoff{margin:25px 0!important;line-height:1.4}.letter-signature{display:block;font:italic 32px/1.5 cursive;color:#571020;min-height:48px;overflow-wrap:anywhere}
+.letter-paper .letter-delivery{font:12px/1.6 var(--msc-body,Arial,sans-serif);color:#675e63;margin:20px 0 16px}
+.letter-paper .letter-error{color:#8f182f;font:14px/1.5 var(--msc-body,Arial,sans-serif);margin:0}.letter-error:empty{display:none}
+.letter-paper button:disabled{opacity:.6;cursor:wait}
+.letter-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.letter-status{position:relative;z-index:10;font:13px/1.5 var(--msc-body,Arial,sans-serif);margin:26px 0 0;color:#f8f6f1;text-align:center}
+.letter-result-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.letter-result>p:not(.letter-kicker){font:17px/1.7 var(--msc-body,Arial,sans-serif)}
+.envelope{position:absolute;z-index:2;top:160px;left:50%;width:min(360px,85vw);height:220px;transform:translateX(-50%);filter:drop-shadow(0 12px 15px #0005);transition:transform 1.1s,top 1s,bottom 1s;transform-style:preserve-3d;pointer-events:none}
+.envelope-back{position:absolute;inset:0;background:#7c233b;border:1px solid #b57184}
+.envelope-pocket{position:absolute;inset:0;background:linear-gradient(155deg,#661a30,#511023);clip-path:polygon(0 0,50% 48%,100% 0,100% 100%,0 100%);z-index:5}
+.envelope-flap{position:absolute;inset:0 0 45%;background:#81273f;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:center top;transition:transform .42s;z-index:7;backface-visibility:visible;border-top:1px solid #b57184}
+.wax-seal{position:absolute;top:40%;left:44%;width:50px;height:50px;display:grid;place-items:center;border-radius:50%;color:#f2d9df;background:#571020;border:3px double #b67180;font:italic 13px Georgia,serif;z-index:8;box-shadow:1px 3px 4px #0007;opacity:0;transform:scale(1.8);transition:opacity .15s,transform .25s}
+.postmark{position:absolute;right:15px;bottom:15px;z-index:8;border:2px double #e6b9c380;padding:8px 12px;transform:rotate(-12deg);font:10px Arial,sans-serif;letter-spacing:.08em;color:#f0cbd4;opacity:0;transition:opacity .2s .5s}
+.letter-scene[data-beat=arrive] .envelope{animation:envelope-arrive .75s both}
+.letter-scene:is([data-beat=arrive],[data-beat=open]) .letter-paper{opacity:0;transform:translateY(170px) scale(.28);pointer-events:none}
+.letter-scene:is([data-beat=open],[data-beat=rise],[data-beat=write],[data-beat=fold],[data-beat=insert]) .envelope-flap{transform:rotateX(180deg);z-index:1}
+.letter-scene:is([data-beat=rise],[data-beat=write]) .envelope{top:auto;bottom:-45px;z-index:0}
+.letter-scene:is([data-beat=rise],[data-beat=write]) .letter-paper{opacity:1;transform:none}
+.letter-scene:is([data-beat=fold],[data-beat=insert],[data-beat=seal],[data-beat=fly]) .envelope{top:auto;bottom:25%;z-index:4}
+.letter-scene[data-beat=fold] .letter-paper{transform:translateY(80px) scale(.38);pointer-events:none;transition-duration:1.36s}
+.letter-scene[data-beat=fold] .letter-paper::before,.letter-scene[data-beat=fold] .letter-paper::after{content:'';position:absolute;left:0;right:0;height:34%;background:#eee9e0 url('assets/paper-grain.svg');z-index:5;box-shadow:0 0 4px #55434955;animation:paper-fold 1.1s both;backface-visibility:visible}
+.letter-scene[data-beat=fold] .letter-paper::before{top:0;transform-origin:center bottom;animation-delay:.3s}
+.letter-scene[data-beat=fold] .letter-paper::after{bottom:0;transform-origin:center top}
+.letter-scene[data-beat=insert] .letter-paper{transform:translateY(170px) scale(.32);opacity:0;transition:transform 1.17s,opacity .4s .6s}
+.letter-scene:is([data-beat=seal],[data-beat=fly]) .letter-paper{opacity:0;transform:translateY(170px) scale(.32)}
+.letter-scene:is([data-beat=seal],[data-beat=fly]) .wax-seal{opacity:1;transform:scale(1)}
+.letter-scene:is([data-beat=seal],[data-beat=fly]) .postmark{opacity:1}
+.letter-scene[data-beat=fly] .envelope{animation:envelope-fly 1.25s cubic-bezier(.45,0,.8,.3) both}
+.letter-scene[data-beat=done] .envelope{display:none}
+@keyframes envelope-arrive{from{opacity:0;transform:translate(-50%,200px) rotate(-9deg)}to{opacity:1;transform:translateX(-50%) rotate(0)}}
+@keyframes paper-fold{from{transform:rotateX(0)}to{transform:rotateX(179deg)}}
+@keyframes envelope-fly{0%{transform:translateX(-50%) rotate(0)}20%{transform:translate(-55%,30px) rotate(-6deg)}100%{transform:translate(90vw,-90vh) rotate(24deg) scale(.12);opacity:0}}
+html[data-motion=reduced] .letter-dialog .envelope{display:none}
+html[data-motion=reduced] .letter-paper{transform:none!important;opacity:1!important;transition:none!important}
+@media(max-width:760px){.letter-dialog{padding:26px 16px 60px;max-height:94svh}.letter-close{margin:-18px -9px 0 0}.letter-paper{padding:28px 20px;font-size:18px;line-height:2}.letter-paper h2{font-size:23px}.letter-kicker{font-size:10px}.letter-blank{max-width:100%}.letter-paper :is(input:not([type=checkbox]),select){max-width:100%;font-size:16px}.letter-paper input[name=email]{width:235px}.letter-paper .letter-submit{width:100%;justify-content:space-between}.envelope{width:270px;height:170px}.letter-result-actions{gap:12px}.letter-interests{gap:7px}.letter-interests label{font-size:13px}}

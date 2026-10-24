@@ -1,0 +1,25 @@
+{
+  "name": "msc-club-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-assets.mjs",
+    "check": "node scripts/check-standalone.mjs && node ../scripts/check-club.mjs",
+    "deploy:check": "node scripts/preflight.mjs && npm run build && wrangler --config wrangler.json deploy --dry-run --outdir .worker-build",
+    "deploy": "node scripts/preflight.mjs && npm run build && wrangler --config wrangler.json deploy",
+    "dev": "npm run build && wrangler --config wrangler.json dev",
+    "db:create": "wrangler --config wrangler.json d1 create msc-club",
+    "db:migrate": "wrangler --config wrangler.json d1 migrations apply DB --remote",
+    "db:backup": "wrangler --config wrangler.json d1 export DB --remote --output ../backups/msc-database.sql"
+  },
+  "dependencies": {
+    "jose": "6.2.12"
+  },
+  "devDependencies": {
+    "wrangler": "4.92.0"
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://msc-council.jaydenli-epic.chatgpt.site/sitemap.xml

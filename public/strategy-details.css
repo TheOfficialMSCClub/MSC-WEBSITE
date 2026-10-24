@@ -1,0 +1,26 @@
+/* Planning materials, archival photography, and real council connections. */
+.object-edition .events,.object-edition .team,.object-edition .council-gallery{position:relative;isolation:isolate;overflow:hidden}
+.object-edition .events{background-color:#f2eee5;background-image:linear-gradient(90deg,#f2eee5 12%,#f2eee5e6 43%,#f2eee542 100%),url('assets/strategy-atlas-v1.webp');background-size:cover;background-position:center top}
+.object-edition .events:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('assets/decision-study.svg') right 7vw top 140px/480px auto no-repeat;opacity:.2;transform:translateY(calc((var(--art-progress,.5) - .5)*-34px))}
+.object-edition .events-grid{position:relative}.object-edition .events .event-art{border:8px solid #f8f2e5;outline:1px solid #b7a38b;box-shadow:0 18px 40px #463a231a}
+.object-edition .team{background:#f5f1e8 url('assets/paper-grain.svg') repeat;background-size:210px}
+.object-edition .team .team-index-heading{position:relative;display:grid;grid-template-columns:1.05fr .7fr;align-items:start;gap:30px 9vw;padding-bottom:25px}
+.object-edition .team .team-index-heading>div{align-self:end;position:relative;z-index:1;max-width:290px}
+.object-edition .team .team-index-heading h2{position:relative;z-index:1;grid-row:1/3}
+.council-network-study{display:block;grid-column:2;width:100%;max-width:520px;opacity:.85;transform:translateY(calc((var(--art-progress,.5) - .5)*-20px));pointer-events:none}
+.object-edition .council-gallery{background:#251c20}
+.object-edition .council-gallery:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(#251c20bb,#251c20f5),url('assets/strategy-archive-v1.webp') center/cover;opacity:.9;transform:translateY(calc((var(--art-progress,.5) - .5)*-24px)) scale(1.04)}
+.object-edition .gallery-card>img{border:7px solid #e9dfcc;outline:1px solid #a9957859;box-shadow:0 10px 20px #0c090959}.gallery-card>span{font-family:'Courier New',monospace!important}
+.object-edition .words{background-image:linear-gradient(#f0ece3e8,#f0ece3fa),url('assets/strategy-atlas-v1.webp');background-size:cover;background-position:center}
+.decision-study{display:block;width:100%;max-width:570px;height:auto;margin-top:28px;opacity:.9;transform:translateY(calc((var(--art-progress,.5) - .5)*-18px))}
+.object-edition .words .working-notes{margin-top:5px;max-width:460px;opacity:.9}
+.object-edition .partners:before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:url('assets/council-network.svg') right -160px top -40px/700px auto no-repeat;opacity:.12;transform:translateY(calc((var(--art-progress,.5) - .5)*-30px))}
+.object-edition .join-section{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:650px;background:#25101a;overflow:hidden}
+.object-edition .join-section:after{content:'';position:absolute;inset:-35px 0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#25101ae8,#25101a70 46%,#25101a05 80%),url('assets/strategy-archive-v1.webp') center/cover;transform:translateY(calc((var(--art-progress,.5) - .5)*-38px))}
+.object-edition .join-section h2{position:relative;font-size:clamp(88px,9.3vw,148px);color:#f5ecdf;margin:38px 0 36px;max-width:650px}.object-edition .join-section h2 em{color:#d4b8a7}
+.object-edition .join-section .join-eyebrow{margin:0;color:#c7ad9e}.object-edition .join-bottom{position:relative;margin:0;color:#e5d4c6}
+.object-edition .join-print-lines{opacity:.25}
+.object-edition .detail-dialog{background:#f7f3e9 url('assets/paper-grain.svg') repeat;background-size:230px}
+@media(max-width:1000px){.object-edition .team .team-index-heading{grid-template-columns:1fr 1fr;gap:25px}.council-network-study{min-width:0;align-self:end}.object-edition .join-section h2{max-width:510px}.object-edition .events{background-position:65% top}}
+@media(max-width:760px){.object-edition .team .team-index-heading{display:block}.object-edition .team .team-index-heading>div{max-width:300px}.council-network-study{width:100%;max-width:440px;margin:22px auto 0}.object-edition .events{background-image:linear-gradient(180deg,#f2eee5c9,#f2eee5ed 48%,#f2eee5),url('assets/strategy-atlas-v1.webp');background-position:70% top}.object-edition .events:after{background-position:right -120px top 70px;opacity:.12}.decision-study{margin-top:24px}.object-edition .words .working-notes{max-width:380px}.object-edition .join-section{display:block;min-height:780px}.object-edition .join-section:after{background:linear-gradient(180deg,#25101a 2%,#25101a80 38%,#25101a10 62%,#25101a 92%),url('assets/strategy-archive-v1.webp') 72% center/auto 100%}.object-edition .join-section h2{font-size:clamp(76px,17vw,112px);margin:32px 0 220px}.object-edition .join-bottom{max-width:350px}.object-edition .gallery-card>img{border-width:5px}}
+@media(prefers-reduced-motion:reduce){.council-network-study,.decision-study,.object-edition .events:after,.object-edition .council-gallery:before,.object-edition .partners:before,.object-edition .join-section:after{transform:none}}

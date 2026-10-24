@@ -1,0 +1,29 @@
+/* A tactile evidence board: working notes, pins, and pointer-centered red cotton. */
+.object-edition .council-feature{position:relative;isolation:isolate;overflow:hidden;background:#28211f url('assets/paper-grain.svg') repeat;background-size:190px;color:#f1e7d9;min-height:790px}
+.detective-environment{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+ .suspect-threads{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.88}
+.suspect-scrim{position:absolute;inset:0;background:linear-gradient(90deg,#28211fbf 0%,#28211f6b 39%,transparent 66%),radial-gradient(ellipse at 72% 25%,transparent,#120d1040 100%);pointer-events:none}
+.object-edition .council-feature .section-label{position:relative;z-index:2;color:#d1b8a4;border-color:#c6a99255}
+.object-edition .council-feature .council-feature-heading{padding-top:35px}
+.object-edition .council-feature .feature-running-title{color:#ba9c8b}
+.object-edition .council-feature h2{color:#f2e9dd;text-shadow:0 4px 30px #100b10b3}
+.object-edition .council-feature h2 em{color:#d3aca1}
+.object-edition .council-feature .feature-deck{color:#e1d1c3}
+.object-edition .council-feature-heading>p:not(.feature-deck){color:#c5b4a8}
+.object-edition .council-feature .underlined{color:#f2e6d8;border-color:#b99a8766}
+.object-edition .council-feature-photo{grid-column:7/11;width:100%;margin-top:115px;max-width:430px;justify-self:start;background:#e2d5c1;box-shadow:0 30px 70px #08050866;transform:rotate(1.5deg)}
+.object-edition .council-feature .feature-margin-note{color:#bda08d;border-color:#bfa28b55}
+.object-edition .council-feature .feature-margin-note>p{color:#d8c5b3}
+.detective-motion{position:relative;z-index:2;display:flex;align-items:center;gap:10px;font:10px/1.5 'Courier New',monospace;min-height:44px;border-bottom:1px solid #b89b8355;color:#cbb09b;margin-top:28px}
+.detective-motion:hover{color:#fff1df}.detective-motion:focus-visible{outline:2px solid #d4b8a0;outline-offset:4px}
+@media(max-width:1100px){.object-edition .council-feature-photo{grid-column:7/12;margin-top:100px}}
+@media(max-width:760px){.object-edition .council-feature{min-height:0}.suspect-threads{opacity:.7}.suspect-scrim{background:linear-gradient(90deg,#28211f99,#28211f20),linear-gradient(0deg,#28211f80,transparent)}.object-edition .council-feature .council-feature-heading{padding-top:25px}.object-edition .council-feature-photo{grid-column:1;margin-top:40px;max-width:none;width:100%}.detective-motion{font-size:9px}.object-edition .council-feature h2{position:relative}}
+/* A continuous printed ribbon, with enough repeated copy to span wide screens. */
+.object-edition .ribbon{position:relative;overflow:hidden;padding:22px 0}
+.object-edition .ribbon-track{display:flex;width:max-content;animation:msc-ribbon-left 36s linear infinite;will-change:transform;transform:translate3d(0,0,0)}
+.object-edition .ribbon-track>div{flex:0 0 auto;display:flex;align-items:center;justify-content:space-around;min-width:100vw;gap:34px;white-space:nowrap;padding-right:34px}
+.object-edition .ribbon.paused .ribbon-track{animation-play-state:paused}
+.object-edition .ribbon-pause{display:grid;place-items:center;position:absolute;right:10px;top:50%;transform:translateY(-50%);width:34px;height:34px;min-width:34px;background:#211d1bee;border:1px solid #b99b7b66;color:#f4e8d4;z-index:2;border-radius:50%;font-size:11px}
+.object-edition .ribbon-pause[hidden]{display:none}
+@keyframes msc-ribbon-left{to{transform:translate3d(-50%,0,0)}}
+@media(prefers-reduced-motion:reduce){.object-edition .ribbon-track{animation:none!important;will-change:auto}}

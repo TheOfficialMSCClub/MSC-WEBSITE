@@ -1,0 +1,887 @@
+{
+  "club": {
+    "name": "Management Strategy Council",
+    "shortName": "MSC",
+    "campus": "University of Toronto Scarborough",
+    "instagram": "https://www.instagram.com/msc.uoft/",
+    "handle": "@msc.uoft",
+    "tagline": "Learn. Network. Succeed.",
+    "linkedin": "https://www.linkedin.com/company/msc-uoft"
+  },
+  "events": [
+    {
+      "id": "summit",
+      "name": "Strategy Summit",
+      "category": "Technology & strategy",
+      "format": "Student-led case competition",
+      "status": "Second edition · 2026",
+      "description": "Turn an everyday observation into a product worth building. A student-led case competition at the intersection of technology, strategy and entrepreneurship.",
+      "image": "assets/briefcase.webp",
+      "art": "mountains",
+      "note": "Teams of 4–5. Open to all programs. Registration closes October 26 at noon. Follow @msc.uoft for the registration link and event schedule.",
+      "edition": "02",
+      "focus": "Go-to-market strategy & brand positioning",
+      "audience": "University of Toronto tri-campus, with UTSC at the heart.",
+      "teamSize": "4–5 students",
+      "registrationClose": "October 26 at noon",
+      "earlyBird": "$35 · through October 21",
+      "regular": "$40",
+      "experience": [
+        {
+          "name": "Hear from industry leaders",
+          "text": "A panel bringing industry perspectives into the room, with a focus on technology, strategy and the start-up space."
+        },
+        {
+          "name": "Take on a real-world case",
+          "text": "Research an opportunity, gather data and survey insights, analyse the evidence, then present a strategy your team can stand behind."
+        },
+        {
+          "name": "Build your network",
+          "text": "Meet students across programs and campuses, and connect with people working in the spaces you want to explore."
+        },
+        {
+          "name": "Capture the experience",
+          "text": "LinkedIn headshots and team-photo stations are planned, giving you a way to leave with a professional portrait and a memory of your team.",
+          "planned": true
+        }
+      ],
+      "takeaways": [
+        {
+          "name": "Stronger skills",
+          "text": "Practise research, data gathering, surveying, analysis and presenting a clear recommendation."
+        },
+        {
+          "name": "Industry insights",
+          "text": "Explore technology, go-to-market strategy, start-ups and the opportunities emerging in wearable tech."
+        },
+        {
+          "name": "Meaningful connections",
+          "text": "Build relationships with peers and industry professionals through shared work and conversation."
+        },
+        {
+          "name": "Greater confidence",
+          "text": "Make decisions with imperfect information and explain the thinking behind your ideas."
+        },
+        {
+          "name": "An entrepreneurial perspective",
+          "text": "Learn to turn an everyday observation into a product idea, then consider how to bring it to market."
+        }
+      ]
+    }
+  ],
+  "departments": [
+    {
+      "name": "Co-Presidents",
+      "description": "Set the year’s direction and chair the council",
+      "code": "CP"
+    },
+    {
+      "name": "Corporate Relations",
+      "description": "Partners, sponsors and speakers",
+      "code": "CR"
+    },
+    {
+      "name": "Finance",
+      "description": "Budgets, reimbursements and sponsorship money",
+      "code": "FN"
+    },
+    {
+      "name": "Operations",
+      "description": "Rooms, run sheets and timelines",
+      "code": "OP"
+    },
+    {
+      "name": "Events",
+      "description": "Plan and run every MSC event, Summit included",
+      "code": "EV"
+    },
+    {
+      "name": "Marketing",
+      "description": "Campaigns, design, storytelling and this website",
+      "code": "MK"
+    }
+  ],
+  "assets": {
+    "010939": {
+      "src": "assets/members/010939.webp",
+      "width": 1100,
+      "height": 1348
+    },
+    "010946": {
+      "src": "assets/members/010946.webp",
+      "width": 1100,
+      "height": 1339
+    },
+    "010952": {
+      "src": "assets/members/010952.webp",
+      "width": 1100,
+      "height": 1354
+    },
+    "011005": {
+      "src": "assets/members/011005.webp",
+      "width": 1100,
+      "height": 1384
+    },
+    "011016": {
+      "src": "assets/members/011016.webp",
+      "width": 1100,
+      "height": 1359
+    },
+    "011023": {
+      "src": "assets/members/011023.webp",
+      "width": 1100,
+      "height": 1348
+    },
+    "011029": {
+      "src": "assets/members/011029.webp",
+      "width": 1100,
+      "height": 1355
+    },
+    "011036": {
+      "src": "assets/members/011036.webp",
+      "width": 1100,
+      "height": 1403
+    },
+    "011113": {
+      "src": "assets/members/011113.webp",
+      "width": 1100,
+      "height": 1378
+    },
+    "011120": {
+      "src": "assets/members/011120.webp",
+      "width": 1100,
+      "height": 1347
+    },
+    "011141": {
+      "src": "assets/members/011141.webp",
+      "width": 1100,
+      "height": 1350
+    },
+    "011207": {
+      "src": "assets/members/011207.webp",
+      "width": 1100,
+      "height": 1355
+    },
+    "011212": {
+      "src": "assets/members/011212.webp",
+      "width": 1100,
+      "height": 1365
+    },
+    "011224": {
+      "src": "assets/members/011224.webp",
+      "width": 1100,
+      "height": 1364
+    },
+    "011231": {
+      "src": "assets/members/011231.webp",
+      "width": 1100,
+      "height": 1351
+    },
+    "011240": {
+      "src": "assets/members/011240.webp",
+      "width": 1100,
+      "height": 1359
+    },
+    "011327": {
+      "src": "assets/members/011327.webp",
+      "width": 1100,
+      "height": 1382
+    },
+    "011347": {
+      "src": "assets/members/011347.webp",
+      "width": 1100,
+      "height": 1382
+    },
+    "011355": {
+      "src": "assets/members/011355.webp",
+      "width": 1100,
+      "height": 1368
+    },
+    "011403": {
+      "src": "assets/members/011403.webp",
+      "width": 1100,
+      "height": 1352
+    },
+    "011720": {
+      "src": "assets/members/011720.webp",
+      "width": 1100,
+      "height": 1373
+    },
+    "011805": {
+      "src": "assets/members/011805.webp",
+      "width": 1100,
+      "height": 1354
+    },
+    "011816": {
+      "src": "assets/members/011816.webp",
+      "width": 1100,
+      "height": 1355
+    },
+    "011828": {
+      "src": "assets/members/011828.webp",
+      "width": 1100,
+      "height": 1382
+    },
+    "011910": {
+      "src": "assets/members/011910.webp",
+      "width": 1100,
+      "height": 1354
+    },
+    "011921": {
+      "src": "assets/members/011921.webp",
+      "width": 1100,
+      "height": 1364
+    },
+    "011929": {
+      "src": "assets/members/011929.webp",
+      "width": 1100,
+      "height": 1370
+    },
+    "coming-soon": {
+      "src": "assets/council-coming-soon.svg",
+      "width": 800,
+      "height": 1000
+    }
+  },
+  "members": [
+    {
+      "id": "joe-kuang",
+      "name": "Joe Kuang",
+      "role": "Co-President",
+      "department": "Co-Presidents",
+      "asset": "010952",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/j-kuang"
+    },
+    {
+      "id": "billy-batsaikhan",
+      "name": "Billy Batsaikhan",
+      "role": "Co-President",
+      "department": "Co-Presidents",
+      "asset": "010946",
+      "crop": [
+        0.11,
+        0.165,
+        0.44,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/billy-batsaikhan"
+    },
+    {
+      "id": "amy-kang",
+      "name": "Amy Kang",
+      "role": "Vice President of Operations",
+      "department": "Operations",
+      "asset": "011016",
+      "crop": [
+        0.11,
+        0.12,
+        0.44,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/amy-kang-085b38331"
+    },
+    {
+      "id": "geser-ganbold",
+      "name": "Geser Ganbold",
+      "role": "Director of Operations",
+      "department": "Operations",
+      "asset": "011023",
+      "crop": [
+        0.53,
+        0.125,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/geserganbold0117"
+    },
+    {
+      "id": "meghana-kuchipudi",
+      "name": "Meghana Kuchipudi",
+      "role": "Vice President of Marketing",
+      "department": "Marketing",
+      "asset": "011113",
+      "crop": [
+        0.11,
+        0.15,
+        0.44,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/meghanakuchipudi"
+    },
+    {
+      "id": "nicholas-mok",
+      "name": "Nicholas Mok",
+      "role": "Vice President of Marketing",
+      "department": "Marketing",
+      "asset": "011120",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/nicholas-mok-23922b30a"
+    },
+    {
+      "id": "jayden-li",
+      "name": "Jayden Li",
+      "role": "Director of Marketing",
+      "department": "Marketing",
+      "asset": "011212",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/jayden-li-048034361"
+    },
+    {
+      "id": "joshua-chan",
+      "name": "Joshua Chan",
+      "role": "Director of Marketing",
+      "department": "Marketing",
+      "asset": "011207",
+      "crop": [
+        0.11,
+        0.145,
+        0.44,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/tcjoshchan"
+    },
+    {
+      "id": "kimberly-sutjiono",
+      "name": "Kimberly Sutjiono",
+      "role": "Vice President of Finance",
+      "department": "Finance",
+      "asset": "011231",
+      "crop": [
+        0.11,
+        0.135,
+        0.44,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/kimberly-sutjiono"
+    },
+    {
+      "id": "jacob-lee",
+      "name": "Jacob Lee",
+      "role": "Director of Finance",
+      "department": "Finance",
+      "asset": "011240",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/jacobl-lee"
+    },
+    {
+      "id": "eren-ehli",
+      "name": "Eren Ehli",
+      "role": "Vice President of Events",
+      "department": "Events",
+      "asset": "011355",
+      "crop": [
+        0.11,
+        0.15,
+        0.44,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/eren-ehli-049748295"
+    },
+    {
+      "id": "laila-yick-lewis",
+      "name": "Laila Yick-Lewis",
+      "role": "Vice President of Events",
+      "department": "Events",
+      "asset": "011403",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/lailayicklewis"
+    },
+    {
+      "id": "angelina-bell",
+      "name": "Angelina Bell",
+      "role": "Director of Events",
+      "department": "Events",
+      "asset": "011816",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/angelina-b-122a21331"
+    },
+    {
+      "id": "melissa-vu",
+      "name": "Melissa Vu",
+      "role": "Director of Events",
+      "department": "Events",
+      "asset": "011805",
+      "crop": [
+        0.11,
+        0.15,
+        0.44,
+        0.56
+      ]
+    },
+    {
+      "id": "anudari-esen",
+      "name": "Anudari Esen",
+      "role": "Vice President of Corporate Relations",
+      "department": "Corporate Relations",
+      "asset": "011910",
+      "crop": [
+        0.11,
+        0.16,
+        0.44,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/anudariesen"
+    },
+    {
+      "id": "jayden-lee",
+      "name": "Jayden Lee",
+      "role": "Director of Corporate Relations",
+      "department": "Corporate Relations",
+      "asset": "011921",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ]
+    },
+    {
+      "id": "angelie-samlal",
+      "name": "Angelie Samlal",
+      "role": "Director of Corporate Relations",
+      "department": "Corporate Relations",
+      "asset": "011929",
+      "crop": [
+        0.53,
+        0.16,
+        0.38,
+        0.56
+      ],
+      "linkedin": "https://ca.linkedin.com/in/angelie-samlal"
+    }
+  ],
+  "groups": [
+    {
+      "name": "Co-Presidents",
+      "asset": "010939",
+      "crop": [
+        0.06,
+        0.27,
+        0.89,
+        0.66
+      ]
+    },
+    {
+      "name": "Operations",
+      "asset": "011005",
+      "crop": [
+        0.055,
+        0.3,
+        0.9,
+        0.62
+      ]
+    },
+    {
+      "name": "Marketing",
+      "asset": "011029",
+      "crop": [
+        0.045,
+        0.43,
+        0.91,
+        0.5
+      ]
+    },
+    {
+      "name": "Finance",
+      "asset": "011224",
+      "crop": [
+        0.055,
+        0.3,
+        0.9,
+        0.63
+      ]
+    },
+    {
+      "name": "Events",
+      "asset": "011327",
+      "crop": [
+        0.055,
+        0.3,
+        0.9,
+        0.63
+      ]
+    },
+    {
+      "name": "Corporate Relations",
+      "asset": "011828",
+      "crop": [
+        0.05,
+        0.3,
+        0.91,
+        0.63
+      ]
+    }
+  ],
+  "gallery": [
+    {
+      "asset": "010939",
+      "title": "Co-Presidents — team portrait"
+    },
+    {
+      "asset": "010946",
+      "title": "Billy Batsaikhan"
+    },
+    {
+      "asset": "010952",
+      "title": "Joe Kuang"
+    },
+    {
+      "asset": "011005",
+      "title": "Operations — team portrait"
+    },
+    {
+      "asset": "011016",
+      "title": "Amy Kang"
+    },
+    {
+      "asset": "011023",
+      "title": "Geser Ganbold"
+    },
+    {
+      "asset": "011029",
+      "title": "Marketing — team portrait"
+    },
+    {
+      "asset": "011036",
+      "title": "Council editorial — 8"
+    },
+    {
+      "asset": "011113",
+      "title": "Meghana Kuchipudi"
+    },
+    {
+      "asset": "011120",
+      "title": "Nicholas Mok"
+    },
+    {
+      "asset": "011141",
+      "title": "Council editorial — 11"
+    },
+    {
+      "asset": "011207",
+      "title": "Joshua Chan"
+    },
+    {
+      "asset": "011212",
+      "title": "Jayden Li"
+    },
+    {
+      "asset": "011224",
+      "title": "Finance — team portrait"
+    },
+    {
+      "asset": "011231",
+      "title": "Kimberly Sutjiono"
+    },
+    {
+      "asset": "011240",
+      "title": "Jacob Lee"
+    },
+    {
+      "asset": "011327",
+      "title": "Events — team portrait"
+    },
+    {
+      "asset": "011347",
+      "title": "Council editorial — 18"
+    },
+    {
+      "asset": "011355",
+      "title": "Eren Ehli"
+    },
+    {
+      "asset": "011403",
+      "title": "Laila Yick-Lewis"
+    },
+    {
+      "asset": "011720",
+      "title": "Council editorial — 21"
+    },
+    {
+      "asset": "011805",
+      "title": "Melissa Vu"
+    },
+    {
+      "asset": "011816",
+      "title": "Angelina Bell"
+    },
+    {
+      "asset": "011828",
+      "title": "Corporate Relations — team portrait"
+    },
+    {
+      "asset": "011910",
+      "title": "Anudari Esen"
+    },
+    {
+      "asset": "011921",
+      "title": "Jayden Lee"
+    },
+    {
+      "asset": "011929",
+      "title": "Angelie Samlal"
+    }
+  ],
+  "letters": {
+    "endpoint": "/api/club/enquiry",
+    "instagram": "https://www.instagram.com/msc.uoft/"
+  },
+  "pendingMembers": [
+    {
+      "id": "associate-slot-1",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 1
+    },
+    {
+      "id": "associate-slot-2",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 2
+    },
+    {
+      "id": "associate-slot-3",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 3
+    },
+    {
+      "id": "associate-slot-4",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 4
+    },
+    {
+      "id": "associate-slot-5",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 5
+    },
+    {
+      "id": "associate-slot-6",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 6
+    },
+    {
+      "id": "associate-slot-7",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 7
+    },
+    {
+      "id": "associate-slot-8",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 8
+    },
+    {
+      "id": "associate-slot-9",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 9
+    },
+    {
+      "id": "associate-slot-10",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 10
+    },
+    {
+      "id": "associate-slot-11",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 11
+    },
+    {
+      "id": "associate-slot-12",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 12
+    },
+    {
+      "id": "associate-slot-13",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 13
+    },
+    {
+      "id": "associate-slot-14",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 14
+    },
+    {
+      "id": "associate-slot-15",
+      "name": "Coming soon",
+      "role": "Council introduction coming soon",
+      "department": "New introductions",
+      "asset": "coming-soon",
+      "crop": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "placeholder": true,
+      "slot": 15
+    }
+  ]
+}

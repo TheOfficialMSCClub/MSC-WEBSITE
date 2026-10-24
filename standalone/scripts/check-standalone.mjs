@@ -1,0 +1,45 @@
+import assert from 'node:assert/strict';
+import {generateKeyPair, SignJWT, createLocalJWKSet, exportJWK} from 'jose';
+import {DatabaseSync} from 'node:sqlite';
+import {readFileSync} from 'node:fs';
+import {accessIdentity} from '../auth.mjs';
+import {createWorker} from '../worker.mjs';
+import {backupToSQL, BACKUP_FORMAT, TABLE_COLUMNS} from '../../server/backup.mjs';
+const origin='https://msc.example.org',issuer='https://msc-test.cloudflareaccess.com';
+const env={MSC_PUBLIC_ORIGIN:origin,MSC_ACCESS_TEAM_DOMAIN:issuer,MSC_ACCESS_AUD:'test-application',MSC_ADMIN_EMAILS:'managementstrategycouncil@gmail.com'};
+const {publicKey,privateKey}=await generateKeyPair('RS256');
+const jwk=await exportJWK(publicKey);Object.assign(jwk,{kid:'test',alg:'RS256'});const keyResolver=createLocalJWKSet({keys:[jwk]});
+const sign=(email='managementstrategycouncil@gmail.com',aud='test-application',iss=issuer,expires='1h')=>new SignJWT({email}).setProtectedHeader({alg:'RS256',kid:'test'}).setSubject('exec-1').setIssuer(iss).setAudience(aud).setIssuedAt().setExpirationTime(expires).sign(privateKey);
+const authenticate=(request,runtime)=>accessIdentity(request,runtime,{keyResolver});
+const req=(path,headers={})=>new Request(origin+path,{headers});
+const token=await sign(),headers={'cf-access-jwt-assertion':token};
+assert.equal((await authenticate(req('/admin',headers),env)).email,env.MSC_ADMIN_EMAILS);
+for(const bad of [await sign('stranger@example.org'),await sign(undefined,'wrong'),await sign(undefined,undefined,'https://wrong.cloudflareaccess.com'),await sign(undefined,undefined,undefined,'-1h'),token.slice(0,-10)+'tampered','eyJhbGciOiJub25lIn0.e30.'])assert.equal(await authenticate(req('/admin',{'cf-access-jwt-assertion':bad}),env),null);
+assert.equal(await authenticate(req('/admin',{'oai-authenticated-user-id':'fake','oai-authenticated-user-email':env.MSC_ADMIN_EMAILS,'cf-access-authenticated-user-email':env.MSC_ADMIN_EMAILS}),env),null);
+assert.equal(await authenticate(req('/admin',headers),{...env,MSC_ACCESS_AUD:''}),null);
+const worker=createWorker({authenticate});let served=0,lastAsset;env.ASSETS={fetch:async request=>{served++;lastAsset=request;return new Response('asset');}};
+assert.equal((await worker.fetch(req('/admin'),env)).status,401);
+assert.equal((await worker.fetch(req('/admin',headers),env)).status,200);
+const html=await (await worker.fetch(req('/admin',headers),env)).text();assert(html.includes('/cdn-cgi/access/logout'));assert(!html.includes('signout-with-chatgpt'));assert(!html.includes('Sites runtime settings'));
+const session=await (await worker.fetch(req('/api/club/session',headers),env)).json();assert.equal(session.admin,true);assert.equal(session.loginLabel,'Sign in to MSC');
+const forged=await (await worker.fetch(req('/api/club/session',{'oai-authenticated-user-id':'fake','oai-authenticated-user-email':env.MSC_ADMIN_EMAILS}),env)).json();assert.equal(forged.admin,false);assert.equal(forged.signedIn,false);
+// DB sentinel makes the authenticated route reach authorization rather than the
+// service-unavailable guard, without allowing any unauthorized DB operation.
+env.DB={prepare(){throw Error('Unauthorized database access');}};
+assert.equal((await worker.fetch(req('/api/club/admin/backup'),env)).status,401);
+assert.equal((await worker.fetch(req('/api/club/admin/export'),env)).status,401);
+assert.equal((await worker.fetch(req('/welcome'),env)).status,200);assert.equal((await worker.fetch(req('/chess-scene.mjs'),env)).status,200);assert.equal(served,1);
+assert.equal((await worker.fetch(req('/strategy-summit'),env)).status,200);assert.equal(new URL(lastAsset.url).pathname,'/strategy-summit.html');assert.equal(served,2);
+assert.equal((await worker.fetch(new Request(origin+'/strategy-summit',{method:'HEAD'}),env)).status,200);assert.equal(lastAsset.method,'HEAD');assert.equal((await worker.fetch(new Request(origin+'/strategy-summit',{method:'POST'}),env)).status,405);
+
+assert.equal((await worker.fetch(new Request('https://alternate.example.org/api/club/admin/export', {headers}),env)).status,421);
+assert.equal((await worker.fetch(new Request('https://alternate.example.org/'),env)).headers.get('location'),origin+'/');
+assert.equal((await worker.fetch(req('/'),{...env,MSC_PUBLIC_ORIGIN:''})).status,503);
+const db=new DatabaseSync(':memory:');db.exec(readFileSync(new URL('../../drizzle/0000_wonderful_black_tom.sql',import.meta.url),'utf8'));
+const row=Object.fromEntries(TABLE_COLUMNS.club_submissions.map(c=>[c,['created_at','updated_at','consent'].includes(c)?1:['confirm_token','confirm_expires'].includes(c)?null:'value']));
+Object.assign(row,{id:crypto.randomUUID(),name:"Unicode 雪 '); DROP TABLE club_submissions;--",email:'student@example.test',type:'member',email_status:'unsubscribed',consent:0,unsubscribe_token:crypto.randomUUID()});
+const snapshot={format:BACKUP_FORMAT,tables:{club_submissions:[row],club_email_jobs:[],club_activity:[]}};
+const sql=backupToSQL(snapshot);db.exec(sql);const restored=db.prepare('SELECT * FROM club_submissions').get();assert.equal(restored.name,row.name);assert.equal(restored.consent,0);assert.equal(restored.email_status,'unsubscribed');assert.equal(restored.unsubscribe_token,row.unsubscribe_token);
+assert.throws(()=>db.exec(sql),/CHECK constraint/);assert.equal(db.prepare('SELECT count(*) n FROM club_submissions').get().n,1);
+assert.throws(()=>backupToSQL({...snapshot,tables:{club_submissions:[row]}}));assert.throws(()=>backupToSQL({...snapshot,tables:{...snapshot.tables,club_submissions:[{...row,extra:'bad'}]}}));
+db.close();console.log('PASS: signed JWT auth; wrong signature/issuer/audience/expiry/email denied; forged headers denied; private routes; external sign-in text; assets and origins; lossless consent/token backup; SQL injection and non-empty restore blocked.');

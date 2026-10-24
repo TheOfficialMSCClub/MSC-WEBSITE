@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import * as T from '../dist/vendor/three/three.module.min.js';
-import {councilPieces,departments,associatePlaceholders} from '../dist/chess-roster.mjs';
-import {createChessModel} from '../dist/chess-model.mjs';
-import {CouncilFocus,portraitAngle} from '../dist/chess-focus.mjs';
-import {squarePosition} from '../dist/chess-state.mjs';
-const root=new URL('../dist/',import.meta.url),data=JSON.parse(fs.readFileSync(new URL('content.json',root))),roster=councilPieces(data.members),model=createChessModel([...roster,...associatePlaceholders]),camera=new T.PerspectiveCamera(36,1.3,.1,90),focus=new CouncilFocus(model,camera);
+import * as T from '../public/vendor/three/three.module.min.js';
+import {councilPieces,departments,associatePlaceholders} from '../public/chess-roster.mjs';
+import {createChessModel} from '../public/chess-model.mjs';
+import {CouncilFocus,portraitAngle} from '../public/chess-focus.mjs';
+import {squarePosition} from '../public/chess-state.mjs';
+const root=new URL('../public/',import.meta.url),data=JSON.parse(fs.readFileSync(new URL('content.json',root))),roster=councilPieces(data.members),model=createChessModel([...roster,...associatePlaceholders]),camera=new T.PerspectiveCamera(36,1.3,.1,90),focus=new CouncilFocus(model,camera);
 assert.equal(roster.length,17);assert.equal(new Set(roster.map(p=>p.id)).size,17);assert.equal(new Set(roster.map(p=>p.square)).size,17);assert.deepEqual(new Set(roster.map(p=>p.id)),new Set(data.members.map(m=>m.id)));
 for(const p of roster)assert.equal(p.type,departments.find(d=>d.name===p.group).type);
 assert.deepEqual(departments.map(d=>d.type),['king','queen','rook','bishop','knight','pawn']);
@@ -13,8 +13,8 @@ assert.equal(roster.filter(p=>p.type==='pawn').length,0);
 assert.equal(roster.filter(p=>p.type==='bishop').length,4);
 assert(roster.filter(p=>p.department==='Events').every(p=>p.type==='rook'));
 assert(roster.filter(p=>['Finance','Operations'].includes(p.department)).every(p=>p.type==='bishop'&&p.group==='Finance & Operations'));
-assert.equal(associatePlaceholders.length,8);assert(associatePlaceholders.every(p=>p.placeholder&&p.type==='pawn'&&!p.name));
-assert.equal(new Set([...roster,...associatePlaceholders].map(p=>p.square)).size,25);
+assert.equal(associatePlaceholders.length,15);assert(associatePlaceholders.every(p=>p.placeholder&&p.type==='pawn'&&p.name==='Coming soon'));assert.deepEqual(associatePlaceholders.map(p=>p.id),data.pendingMembers.map(p=>p.id));
+assert.equal(new Set([...roster,...associatePlaceholders].map(p=>p.square)).size,32);
 const settle=()=>{for(let i=0;i<180;i++)focus.tick(1/60);assert.equal(focus.animation,null);};
 const overview=camera.position.clone();focus.select('joe-kuang');focus.tick(.04);assert(focus.animation);const joe=model.pieces.find(p=>p.id==='joe-kuang');assert(joe.mesh.position.y>.055);settle();assert(joe.mesh.position.z>5);assert(camera.position.distanceTo(focus.look)<5);assert(camera.position.distanceTo(overview)>8);
 // Interrupting a move safely returns the previous member while bringing the next forward.
@@ -48,3 +48,9 @@ model.group.rotation.y=-.12;
 for(const member of roster){focus.select(member.id,{immediate:true});model.group.updateMatrixWorld(true);const piece=model.pieces.find(p=>p.id===member.id),front=new T.Vector3(0,0,1).transformDirection(piece.mesh.matrixWorld),toward=camera.position.clone().sub(piece.mesh.getWorldPosition(new T.Vector3()));front.y=toward.y=0;assert(front.normalize().dot(toward.normalize())>Math.cos(portraitAngle)-1e-8&&front.dot(toward)<Math.cos(portraitAngle)+1e-8,`${member.id} must present the near-sideways portrait angle`);}
 focus.select(null,{immediate:true});for(const piece of model.pieces)assert(Math.abs(Math.sin((piece.mesh.rotation.y-piece.mesh.userData.homeYaw)/2))<1e-7,'Return to the authored board orientation.');
 console.log('PASS: all 17 ivory/maroon sculptures present the near-sideways view and restore their board orientations.');
+
+// New positions support the same camera, crop and reset behavior as announced members.
+for(const pending of associatePlaceholders){focus.select(pending.id,{immediate:true});assert.equal(focus.activeId,pending.id);assert(fs.existsSync(new URL(data.assets[pending.asset].src,root)));}
+focus.select(null,{immediate:true});
+assert.equal(model.pieces.length,32);assert.equal(model.pieces.filter(p=>p.color==='white').length,16);
+console.log('PASS: 32 distinct pieces, 16 of each finish, all 15 Coming soon portraits and close-up selection.');

@@ -1,0 +1,14 @@
+import {readFileSync, writeFileSync, existsSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+const configPath = fileURLToPath(new URL('../wrangler.json', import.meta.url));
+if (existsSync(configPath)) throw Error('wrangler.json already exists. Edit its non-secret settings directly.');
+const args = Object.fromEntries(process.argv.slice(2).map(arg => {const n=arg.indexOf('=');if(n<0||!arg.startsWith('--'))throw Error('Use --key=value arguments.');return [arg.slice(2,n),arg.slice(n+1)];}));
+if (Object.keys(args).some(k=>!['origin','database-id','team-domain','aud','admins'].includes(k))) throw Error('Unknown setting.');
+const config=JSON.parse(readFileSync(new URL('../wrangler.example.json',import.meta.url),'utf8'));
+config.vars.MSC_PUBLIC_ORIGIN=args.origin||'';
+config.vars.MSC_ACCESS_TEAM_DOMAIN=args['team-domain']||'';
+config.vars.MSC_ACCESS_AUD=args.aud||'';
+if(args.admins)config.vars.MSC_ADMIN_EMAILS=args.admins;
+config.d1_databases[0].database_id=args['database-id']||config.d1_databases[0].database_id;
+writeFileSync(configPath,JSON.stringify(config,null,2)+'\n',{flag:'wx'});
+console.log('Saved non-secret deployment settings. Run npm run deploy:check after completing them.');

@@ -1,0 +1,7 @@
+import {siteMotion} from './site-motion.mjs';
+const reduced=siteMotion,sections=[...document.querySelectorAll('[data-section-art]')],visible=new Set(),values=new Map();let frame=0,last=0;
+const target=section=>{const box=section.getBoundingClientRect();return reduced.matches?.5:Math.max(0,Math.min(1,(innerHeight-box.top)/(innerHeight+box.height)));};
+function render(time){frame=0;const dt=last?Math.min((time-last)/1000,.05):1/60;last=time;let moving=false;for(const section of visible){const goal=target(section),prior=values.get(section)??goal;let next=reduced.matches?goal:prior+(goal-prior)*(1-Math.exp(-dt*8));if(Math.abs(goal-next)<.0002)next=goal;else moving=true;values.set(section,next);section.style.setProperty('--art-progress',next.toFixed(4));}if(moving)wake();else last=0;}
+function wake(){if(visible.size&&!document.hidden&&!frame)frame=requestAnimationFrame(render);}
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting)visible.add(entry.target);else visible.delete(entry.target);}wake();},{rootMargin:'100px'});sections.forEach(section=>observer.observe(section));}else sections.forEach(section=>visible.add(section));
+addEventListener('scroll',wake,{passive:true});addEventListener('resize',wake,{passive:true});document.addEventListener('visibilitychange',()=>{last=0;wake();});reduced.addEventListener('change',()=>{sections.forEach(section=>{values.set(section,.5);section.style.setProperty('--art-progress','.5');});wake();});wake();
